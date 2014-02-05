@@ -161,7 +161,7 @@ class ChildTheme_VC {
 		add_action( 'template_redirect', array( &$this, 'layout_options' ) );
 		
 		// CSS // wp_print_styles
-		add_action( 'wp_print_styles', array( &$this, 'wp_print_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_print_styles' ) );
 		
 		// Javascripts // wp_enqueue_scripts // wp_print_scripts
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );

@@ -1,3 +1,12 @@
+ChangeLog
+====================
+
+### 02.05.14 - 3.2.1
+- remove wp_print_styles in favor of wp_enqueue_scripts
+
+Pre Markedown
+====================
+
 == 3.2 ==
 01.20.14
 - update templates to utilize bootstrap columns
