@@ -26,7 +26,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	
 	
 	// Post Meta
-	require_once( "FeaturedPostMetaVCWP.php" );
+	// require_once( "FeaturedPostMetaVCWP.php" );
 	// require_once( "AzzaStarterPostMetaVCWP.php" );
 	
 	
@@ -38,6 +38,9 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	
 	// Added Functionality
 	// require_once( "ThemeSupport/initiate.php" );
+	require_once( "Flickr/initiate.php" );
+	require_once( "ImageModal/initiate.php" );
+	require_once( "WPSEOEdits.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	

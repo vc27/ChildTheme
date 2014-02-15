@@ -1,0 +1,11 @@
+== 1.0.1 ==
+08.17.13
+- left off at DisplayFlickrVC change method sss() to get_photoset() that returns the photos in html.
+
+== 1.0 ==
+08.12.13
+- left off at get_photoset in GetFlickrVC
+
+== 1.0 ==
+08.08.13
+- Initial commit
