@@ -1,15 +1,12 @@
 /**
  * File Name childTheme.js
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.2
- * @updated 06.28.13
+ * @version 1.20
+ * @updated 00.00.00
  **/
 jQuery(document).ready(function($) {
 	
-	childTheme.init({
-		scaleFix : true,
-		displayIEMessage : true
-	});
+	childTheme.init();
 	
 });
 
@@ -21,7 +18,7 @@ jQuery(document).ready(function($) {
 /**
  * childTheme
  * @version 1.0
- * @updated 06.28.13
+ * @updated 00.00.00
  **/
 var childTheme = {
 	
@@ -29,50 +26,66 @@ var childTheme = {
 	/**
 	 * init
 	 * @version 1.0
-	 * @updated 06.28.13
+	 * @updated 00.00.00
 	 **/
-	init : function( params ) {
+	init : function() {
 		
-		childTheme.setParams(params);
-		
-		childTheme.mbpScaleFix();
-		childTheme.checkIEVersion();
+		childTheme.Flickr();
+		childTheme.navSwap();
 		
 	}, // end init : function
 	
 	
 	
 	/**
-	 * mbpScaleFix
+	 * navSwap
 	 * @version 1.0
-	 * @updated 06.28.13
+	 * @updated 00.00.00
 	 **/
-	scaleFix : false,
-	mbpScaleFix : function() {
+	navSwap : function() {
 		
-		if ( typeof MBP != 'undefined' && childTheme.scaleFix == true ) {
-			MBP.scaleFix();
-		}
+		jQuery('#primary-navigation .icon-smiley').hover(
+			function() {
+				jQuery(this).removeClass('icon-smiley').addClass('icon-grin');
+			},
+			function() {
+				jQuery(this).removeClass('icon-grin').addClass('icon-smiley');
+			}
+		);
 		
-	}, // end mbpScaleFix : function
+		jQuery('#primary-navigation .icon-github').hover(
+			function() {
+				jQuery(this).removeClass('icon-github').addClass('icon-github2');
+			},
+			function() {
+				jQuery(this).removeClass('icon-github2').addClass('icon-github');
+			}
+		);
+		
+	}, // end navSwap : function
 	
 	
 	
 	/**
-	 * Return IE Message in body tag
+	 * Flicker
 	 * @version 1.0
-	 * @updated 11.18.12
+	 * @updated 00.00.00
 	 **/
-	displayIEMessage : false,
-	ieVersion : get_ie_version(),
-	ieMessage : 'You are using an outdated version of Internet Explorer please update your copy for a better experience.',
-	checkIEVersion : function() {
+	Flickr : function() {
+
+		// Flickr
+		jQuery('.thumb').each(function() {
+			
+			var imgSrc = jQuery('img', this).attr('src');
+			imgSrc = imgSrc.replace("_s.jpg", ".jpg");
+			
+			jQuery('a', this).attr({
+				"href": imgSrc,
+			});
+			
+		});
 		
-		if ( childTheme.displayIEMessage == true && childTheme.ieVersion > -1 && childTheme.ieVersion <= 7.0 ) {
-			jQuery('body').prepend('<div class="bad-ie-message" style="display:block;text-align:center;font-size:11px;padding-top:7px;height:15px;overflow:hidden;color:#000;background:#fff;width:100%;"><p>'+childTheme.ieMessage+'</p></div>');
-		}
-		
-	}, // end checkIEVersion : function
+	}, // end Flickr : function
 	
 	
 	
@@ -88,21 +101,11 @@ var childTheme = {
 	 * setParams
 	 * 
 	 * version 1.0
-	 * updated 00.00.13
+	 * updated 00.00.00
 	 **/
-	setParams : function( params ) {
+	setParams : function() {
 		
-		if ( typeof params != 'undefined' ) {
-			
-			if ( typeof params.scaleFix != 'undefined' && params.scaleFix == true ) {
-				childTheme.scaleFix = params.scaleFix;
-			}
-			
-			if ( typeof params.displayIEMessage != 'undefined' && params.displayIEMessage == true ) {
-				childTheme.displayIEMessage = params.displayIEMessage;
-			}
-			
-		}
+		
 		
 	}  // end setParams : function
 	
