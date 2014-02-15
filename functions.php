@@ -157,8 +157,6 @@ class ChildTheme_VC {
 		 * Front End - Enqueue, Print & other menial labor
 		 **/
 		
-		add_action( 'wp_head', array( &$this, 'wp_head' ) );
-		
 		// Layout Options
 		add_action( 'template_redirect', array( &$this, 'layout_options' ) );
 		
@@ -167,10 +165,10 @@ class ChildTheme_VC {
 		
 		// Javascripts // wp_enqueue_scripts // wp_print_scripts
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
-		// add_filter( 'parenttheme-localize_script', array( &$this, 'localize_script' ) );
+		add_filter( 'parenttheme-localize_script', array( &$this, 'localize_script' ) );
 		
 		// Breadcrumb Navigation
-		// add_action( 'inner_wrap_top', array( &$this, 'breadcrumb_navigation' ) );
+		add_action( 'inner_wrap_top', array( &$this, 'breadcrumb_navigation' ) );
 		
 		// Login Scripts
 		add_action( 'login_enqueue_scripts', array( &$this, 'login_enqueue_scripts' ) );
@@ -242,10 +240,11 @@ class ChildTheme_VC {
 		/**
 		 * CSS
 		 **/
-		wp_register_style( 'icomoon', "$this->stylesheet_directory_uri/css/icomoon/style.css" );
-		wp_register_style( 'google-fonts', "http://fonts.googleapis.com/css?family=Cutive+Mono|Open+Sans:400italic,700italic,400,700" );
+		
 		wp_register_style( 'childtheme-default', "$this->stylesheet_directory_uri/css/default.css" );
 		wp_register_style( 'childtheme-responsive', "$this->stylesheet_directory_uri/css/responsive.css" );
+		
+		// wp_register_style( 'font-awesome', $this->parent_theme->template_directory_uri . "/css/font-awesome.css" );
 		
 		
 		
@@ -268,23 +267,6 @@ class ChildTheme_VC {
 	 * Front End - Enqueue, Print & other menial labor
 	 **/
 	####################################################################################################
-	
-	
-	
-	
-	
-	
-	/**
-	 * wp_head
-	 * 
-	 * @version 1.0
-	 * @updated	00.00.00
-	 **/
-	function wp_head() {
-		
-		echo "\n<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\" />\n";
-
-	} // end function wp_head 
 	
 	
 	
@@ -331,9 +313,8 @@ class ChildTheme_VC {
 	function wp_print_styles() {
 		
 		wp_enqueue_style( 'parenttheme-reset' );		
-		wp_enqueue_style( 'bootstrap-responsive' );
-		wp_enqueue_style( 'icomoon' );
-		wp_enqueue_style( 'google-fonts' );		
+		// wp_enqueue_style( 'bootstrap-responsive' );		
+		// wp_enqueue_style( 'font-awesome' );		
 		wp_enqueue_style( 'childtheme-default' );		
 		wp_enqueue_style( 'childtheme-responsive' );
 

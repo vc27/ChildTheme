@@ -17,7 +17,17 @@
 	<!-- Start Footer -->
 	<div id="footer" class="outer-wrap">
 		<footer class="inner-wrap">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/img-footer-bg-linned-paper.png" alt="footer-bg-linned-paper"/>
+			<?php 
+			
+			wp_nav_menu( array( 
+				'depth' => 1, 
+				'fallback_cb' => '', 
+				'theme_location' => 'footer-navigation', 
+				'container' => 'div', 
+				'container_id' => 'footer-navigation' 
+			) );
+			
+			?>
 			<div class="clear"></div>
 		</footer>
 	</div><!-- End Footer -->
