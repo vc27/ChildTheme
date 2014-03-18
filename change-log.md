@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 03.18.14 - 3.3.0
+- add admin customization class to addons for easy filtering
+
 ### 02.05.14 - 3.2.1
 - remove wp_print_styles in favor of wp_enqueue_scripts
 
