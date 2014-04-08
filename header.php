@@ -13,7 +13,7 @@ get_template_part( 'header-head' );
 
 ?>
 <!-- Start Body -->
-<body <?php body_class('fade out'); ?> ng-controller="AngularAddonCtrl">
+<body <?php body_class(); ?>>
 	<?php do_action('after_body_tag'); ?>
 	<div id="page">
 			

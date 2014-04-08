@@ -40,6 +40,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	// require_once( "ThemeSupport/initiate.php" );
 	// require_once( "AngularAddon/initiate.php" );
 	require_once( "AdminCustomizationsWP.php" );
+	require_once( "GAUniversalAnalyticsWP.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	
