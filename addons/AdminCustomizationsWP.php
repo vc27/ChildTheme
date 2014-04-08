@@ -222,6 +222,7 @@ class AdminCustomizationsWP {
 		// Advanced Custom Fields
 		if ( current_user_can( $this->role__restrict_management ) ) {
 			remove_menu_page( 'edit.php?post_type=acf' );
+			remove_menu_page( 'google_universal_analytics' );
 		}
         
     } // end function remove_mene_page
@@ -240,7 +241,9 @@ class AdminCustomizationsWP {
 	function remove_submenus() {
 		global $submenu;
 		
-		if ( ! current_user_can( $this->role__restrict_management ) ) { print_r($submenu); }
+		if ( ! current_user_can( $this->role__restrict_management ) AND isset( $_GET['showMenuWP'] ) ) { 
+			print_r($submenu); 
+		}
 		
 		// unset($submenu['themes.php'][5]); // Removes 'Themes'
 		// unset($submenu['themes.php'][12]); // Removes Theme Editor
@@ -260,9 +263,7 @@ class AdminCustomizationsWP {
 			unset($submenu['options-general.php'][42]);
 			unset($submenu['options-general.php'][41]);
 			
-			unset($submenu['wpseo_dashboard'][6]);
-			unset($submenu['wpseo_dashboard'][10]);
-			unset($submenu['wpseo_dashboard'][9]);
+			unset($submenu['wpseo_dashboard'][8]);
 			
 		}
 		
