@@ -20,27 +20,9 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	
 	
 	
-	// Taxonomies & Post Types
-	// require_once( "PostTypes/initiate.php" );
-
-	
-	
-	// Post Meta
-	// require_once( "FeaturedPostMetaVCWP.php" );
-	// require_once( "AzzaStarterPostMetaVCWP.php" );
-	
-	
-	
-	// Options Pages
-	// require_once( "AzzaOptionsPageVCWP.php" );
-	
-	
-	
 	// Added Functionality
 	// require_once( "ThemeSupport/initiate.php" );
-	// require_once( "AngularAddon/initiate.php" );
 	require_once( "AdminCustomizationsWP.php" );
-	require_once( "GAUniversalAnalyticsWP.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	
