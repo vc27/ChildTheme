@@ -1,0 +1,231 @@
+/* 
+File Name default.css
+Version 3.0
+Updated 03.14.14
+Package ParentTheme
+License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
+
+/* Reset */
+@import 'reset';
+
+/* Defaults */
+$font-stack-a: Helvetica, sans-serif;
+$font-size-a: 12px;
+$max-width-a: 940px;
+
+/*Colors*/
+$color-error: red;
+
+$border-color-a: #aaa;
+$border-color-b: #666;
+
+/*mixin*/
+@mixin border-radius($radius) { -webkit-border-radius: $radius; -moz-border-radius: $radius; -ms-border-radius: $radius; border-radius: $radius; }
+@mixin box-shadow($shadow) { box-shadow:$shadow; -moz-box-shadow:$shadow; -webkit-box-shadow:$shadow; -o-box-shadow:$shadow; }
+@mixin filter-blur($filter) { filter:blur($filter); -webkit-filter:blur($filter); -moz-filter:blur($filter);-o-filter: blur(5px);-ms-filter:blur($filter); }
+@mixin transition($transition) { -webkit-transition:$transition; -moz-transition:$transition; -o-transition:$transition; transition:$transition; }
+
+
+body { line-height:18px; font-family:$font-stack-a; }
+#page { font-size:$font-size-a; min-height:100%; }
+.outer-wrap { position:relative; }
+.inner-wrap { max-width:$max-width-a; position:relative; margin:0 auto; text-align:left; }
+
+a, a:visited { text-decoration:none; }
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { font-weight:800; display:block; line-height:1.1em; }
+.h1, h1 { font-size:26px; }
+.h2, h2 { font-size:23px; }
+.h3, h3 { font-size:20px; }
+.h4, h4 { font-size:17px; }
+.h5, h5 { font-size:14px; }
+.h6, h6 { font-size:12px; }
+
+
+
+
+
+
+/* Forms
+#################################################################################################### */
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"] { 
+	font-size:$font-size-a; font-family:$font-stack-a; width:97%;
+	border:solid 1px $border-color-a; border-top-color:$border-color-b; padding:3px 1%;
+}
+textarea { height:100px; }
+label.error { color:$color-error; }
+
+
+
+
+
+
+/* Buttons
+#################################################################################################### */
+.btn { cursor:pointer; display:inline-block; padding:2px 6px; }
+
+
+
+
+
+
+/* Blocks
+#################################################################################################### */
+
+
+
+
+
+
+/* General Links
+#################################################################################################### */
+
+
+/* Main Navigation Links */
+#primary-navigation {
+	a { text-decoration:none; }
+	.current-menu-item a, a:hover {}
+}
+
+
+/* footer-navigation */
+#footer-navigation {
+	a {}
+	li { display:inline; padding:0 6px 0 0; margin:0 4px 0 0; }
+}
+
+
+/* Navigation */
+.navigation-post {
+	display:block; clear:both; text-align:left; padding:3px 7px;
+	.prev-post { padding-left:7px; }
+	.next-post { padding-right:7px; }
+}
+
+.wp-pagenavi {
+	a, span { padding:3px 4px; margin:3px; }
+}
+
+#navigation-breadcrumb { font-weight:bold; padding-bottom:3px; display:block; clear:both; }
+.navigation-posts { font-weight:bold; padding-bottom:3px; display:block; clear:both; text-align:center; }
+
+
+
+
+
+
+/* Post, Page & General Loops
+#################################################################################################### */
+
+.hentry { position:relative; }
+#loop-default {
+	.hentry { padding:45px 0 15px 0; }
+	.hentry:first-child { padding:0 0 15px 0; }
+}
+
+
+
+/* Meta Data */
+.meta-data {}
+
+.post-comments { padding:0 7px 0 0; }
+.post-date { padding:0 7px 0 0; }
+.read-more-dots { display:none; }
+
+
+
+/* Entry - Excerpt */
+#loop-default {
+	.entry { clear:both; }
+	.excerpt { clear:none; padding:0; }
+}
+
+a.read_more { text-decoration:underline; font-style:italic; display:block; }
+
+.entry {
+	.aligncenter { display:block; margin:0 auto 15px; }
+	.alignnone { clear:both; float:none; }
+	.alignleft { margin-right:3px; margin-bottom:3px; }
+	.alignright { margin-left:3px; margin-bottom:3px; }
+	img { max-width:100% !important; height:auto !important; }
+	img.wp-smiley { border:none; margin:0; padding:0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+    p { padding-bottom:20px; }
+    blockquote {
+		p { padding:0; margin:10px 45px 20px 20px; }
+	}
+	ol, ul { margin:5px 0 15px 20px; }
+	ul { list-style:disc; }
+	ol { list-style:decimal; }
+	li { padding-bottom:7px; }
+	strong {}
+	small { font-size:11px; }
+	table { line-height:18px; }
+	table {
+		table td { padding-right:7px; vertical-align:top; }
+	}
+} /*end .entry */
+
+.excerpt p { padding-bottom:10px; }
+
+
+
+/* Gallery Shortcode */
+.gallery {
+	dl.gallery-item { display:block; float:left; }
+
+	dl dt.gallery-icon {}
+	img {}
+	.gallery-caption {}
+}
+
+.wp-caption {
+	max-width:96%; display:block; text-align:center !important; padding:5px; background:#eee;
+	p { font-size:11px; line-height:14px; padding:5px 0 7px; }
+	img { display:inline; }
+	.wp-caption-text {}
+}
+
+
+
+/* All sitemap style layouts - search, 404, sitemap */
+.layout-sitemap .display-list {
+	margin:0 2% 20px 0; width:48%; float:left;
+
+	ul { margin:10px 0 0 0; }
+	ul ul { margin:0 0 7px 15px; list-style:disc; }
+	ul ul.children { padding:0; margin-left:15px; list-style:disc; }
+
+	.site-search { display:block; padding-bottom:10px; }
+}
+
+
+
+
+
+
+/* Widget Areas
+#################################################################################################### */
+
+
+/* Menu indiv */
+.sidebar ul {
+	ul {}
+	li { margin-bottom:10px; }
+	li li { margin:0; }
+
+	.widget-box {}
+}
+
+
+
+
+
+
+/* Comments */
+@import 'comments';
+/*Responsive*/
+@import 'responsive';

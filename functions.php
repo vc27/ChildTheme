@@ -4,8 +4,8 @@
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 2.3
- * @updated 10.17.13
+ * @version 2.4
+ * @updated 04.14.14
  **/
 #################################################################################################### */
 
@@ -17,7 +17,7 @@
  * @access public
  * @var int
  **/
-$ThemeCompatibility = 4.9;
+$ThemeCompatibility = 5.0;
 
 
 
@@ -74,7 +74,6 @@ class ChildTheme_VC {
 	 **/
 	function init_child_theme() {
 		
-		// add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
 		add_action( 'init', array( &$this, 'init' ) );
 		
 	} // end function init_child_theme
@@ -138,15 +137,15 @@ class ChildTheme_VC {
 		$register_sidebars = $this->parent_theme->register_sidebars( array(
 			'Primary Sidebar' => array(
 				'desc' => 'This is the primary widgetized area.',
-				),
-			) );
+			),
+		) );
 		
 		
 		// register_nav_menus
 		register_nav_menus( array(
 			'primary-navigation' => 'Primary Navigation',
 			'footer-navigation' => 'Footer Navigation'
-			) );
+		) );
 		
 		
 		// register styles and scripts
@@ -166,6 +165,8 @@ class ChildTheme_VC {
 		// Javascripts // wp_enqueue_scripts // wp_print_scripts
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
 		add_filter( 'parenttheme-localize_script', array( &$this, 'localize_script' ) );
+		
+		add_action( 'wp_enqueue_scripts', array( &$this, 'deregister' ), 11 );
 		
 		// Breadcrumb Navigation
 		add_action( 'inner_wrap_top', array( &$this, 'breadcrumb_navigation' ) );
@@ -230,32 +231,34 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * Register Styles and Scripts
+	 * register_style_and_scripts
 	 *
-	 * @version 1.6
-	 * @updated 02.11.13
+	 * @version 2.0
+	 * @updated 03.14.14
 	 **/
 	function register_style_and_scripts() {
 		
-		/**
-		 * CSS
-		 **/
-		
 		wp_register_style( 'childtheme-default', "$this->stylesheet_directory_uri/css/default.css" );
-		wp_register_style( 'childtheme-responsive', "$this->stylesheet_directory_uri/css/responsive.css" );
+		wp_register_script( 'childTheme', "$this->stylesheet_directory_uri/js/min/childTheme-min.js", array('jquery') );
 		
-		// wp_register_style( 'font-awesome', $this->parent_theme->template_directory_uri . "/css/font-awesome.css" );
+	} // end function register_style_and_scripts 
+	
+	
+	
+	
+	
+	
+	/**
+	 * deregister
+	 *
+	 * @version 2.0
+	 * @updated 03.14.14
+	 **/
+	function deregister() {
 		
+		wp_deregister_script('helper');
 		
-		
-		/**
-		 * JS
-		 **/
-		
-		// Custom JS
-		wp_register_script( 'childTheme', "$this->stylesheet_directory_uri/js/childTheme.js", array( 'helper' ) );
-		
-	} // end function register_style_and_scripts
+	} // end function deregister
 	
 	
 	
@@ -305,18 +308,14 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * Add CSS
+	 * wp_print_styles
 	 *
-	 * @version 1.5
-	 * @updated 10.20.12
+	 * @version 2.0
+	 * @updated 03.14.14
 	 **/
 	function wp_print_styles() {
 		
-		wp_enqueue_style( 'parenttheme-reset' );		
-		// wp_enqueue_style( 'bootstrap-responsive' );		
-		// wp_enqueue_style( 'font-awesome' );		
-		wp_enqueue_style( 'childtheme-default' );		
-		wp_enqueue_style( 'childtheme-responsive' );
+		wp_enqueue_style( 'childtheme-default' );
 
 	} // end function wp_print_styles
 	
@@ -328,20 +327,11 @@ class ChildTheme_VC {
 	/**
 	 * Enqueue Scripts
 	 *
-	 * @version 1.4
-	 * @updated 11.18.12
+	 * @version 2.0
+	 * @updated 03.14.14
 	 **/
 	function wp_enqueue_scripts() {
 		
-		/**
-		 * Notes on helper
-		 * 
-		 * Helper script pulls in all necessary scripts from parenttheme.
-		 * It is added here to ensure it is called before child-custom.
-		 * Do not add it as a dependent to childtheme-style or else 
-		 * deregistering will be more of a pain in the ass.
-		 **/
-		wp_enqueue_script( 'helper' );		
 		wp_enqueue_script( 'childTheme' );
 		
 	} // function wp_enqueue_scripts 
@@ -410,7 +400,7 @@ class ChildTheme_VC {
 			$this->breadcrumb->breadcrumb_navigation( array(
 				'before' => '<div id="navigation-breadcrumb-inner-wrap">',
 				'after' => '</div>',
-				) );
+			) );
 			
 		}
 		
