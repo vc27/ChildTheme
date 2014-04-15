@@ -1,6 +1,10 @@
 ChangeLog
 ====================
 
+### 04.08.14 - 3.5.0
+- update to codekit
+- add IE conditional css
+
 ### 04.08.14 - 3.4.0
 - add google universal analytics to wp_head
 - optional js file for ga click-tracking
