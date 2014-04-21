@@ -1,6 +1,10 @@
 ChangeLog
 ====================
 
+### 04.08.14 - 3.6.0
+- update wpseo
+- add login js
+
 ### 04.08.14 - 3.5.0
 - update to codekit
 - add IE conditional css

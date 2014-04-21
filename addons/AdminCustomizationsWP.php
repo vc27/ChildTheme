@@ -182,6 +182,9 @@ class AdminCustomizationsWP {
 		if ( file_exists( get_stylesheet_directory() . "/css/admin-login.css" ) ) {
 			wp_enqueue_style( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/css/admin-login.css" );
 		}
+		if ( file_exists( get_stylesheet_directory() . "/js/adminLogin.js" ) ) {
+			wp_enqueue_script( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/js/adminLogin.js", array('jquery') );
+		}
 		
 	} // end function login_enqueue_scripts 
 	

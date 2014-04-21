@@ -21,6 +21,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	// Added Functionality
 	// require_once( "ThemeSupport/initiate.php" );
 	require_once( "AdminCustomizationsWP.php" );
+	require_once( "WPSEOEdits.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	

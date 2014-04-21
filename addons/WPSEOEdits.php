@@ -4,8 +4,8 @@
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.2
- * @updated 03.16.13
+ * @version 1.3
+ * @updated 04.18.14
  **/
 #################################################################################################### */
 
@@ -52,26 +52,14 @@ class WPSEOEdits {
 	 * admin_init 
 	 * 
 	 * @version 0.1
-	 * @updated 10.07.12
+	 * @updated 04.19.14
 	 **/
 	function admin_init() {
 		
-		add_filter( 'wpseo_use_page_analysis', array( &$this, 'wpseo_use_page_analysis' ) );
+		add_filter( 'wpseo_use_page_analysis', '__return_false' );
+		add_filter( 'wpseo_stopwords', '__return_empty_array' );
 		
 	} // end function admin_init
-	
-	
-	
-	
-	
-	
-	/**
-	 * wpseo_use_page_analysis 
-	 * 
-	 * @version 0.1
-	 * @updated 10.07.12
-	 **/
-	function wpseo_use_page_analysis() { return false; }
 	
 	
 	
