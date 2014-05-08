@@ -165,7 +165,7 @@ class ChildTheme_VC {
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
 		add_filter( 'parenttheme-localize_script', array( &$this, 'localize_script' ) );
 		
-		add_action( 'wp_enqueue_scripts', array( &$this, 'deregister' ), 11 );
+		add_action( 'wp_enqueue_scripts', array( &$this, 'deregister' ), 10 );
 		
 		// Breadcrumb Navigation
 		add_action( 'inner_wrap_top', array( &$this, 'breadcrumb_navigation' ) );

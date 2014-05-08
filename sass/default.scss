@@ -10,9 +10,20 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 @import 'reset';
 @import 'bootstrap-responsive';
 
-/* Defaults */
-$font-stack-a: Helvetica, sans-serif;
-$font-size-a: 12px;
+/* Padding */
+$standard-pad: 15px;
+
+/* Paragraph */
+$font-paragraph: sans-serif;
+$font-paragraph-size: 16px;
+$font-paragraph-line-height: 26px;
+
+/* Title */
+$font-title: sans-serif;
+$font-title-weight: 400; 
+$font-title-line-height: 1.1em;
+
+/* Block */
 $max-width-a: 940px;
 
 /*Colors*/
@@ -28,20 +39,23 @@ $border-color-b: #666;
 @mixin transition($transition) { -webkit-transition:$transition; -moz-transition:$transition; -o-transition:$transition; transition:$transition; }
 
 
-body { line-height:18px; font-family:$font-stack-a; }
-#page { font-size:$font-size-a; min-height:100%; }
-.outer-wrap { position:relative; }
+body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; height:100%; }
+#page { position:relative; font-size:$font-paragraph-size; height:100%; }
+.outer-wrap { position:relative; height:100%; }
 .inner-wrap { max-width:$max-width-a; position:relative; margin:0 auto; text-align:left; }
 
 a, a:visited { text-decoration:none; }
 
-.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { font-weight:800; display:block; line-height:1.1em; }
-.h1, h1 { font-size:26px; }
-.h2, h2 { font-size:23px; }
-.h3, h3 { font-size:20px; }
-.h4, h4 { font-size:17px; }
-.h5, h5 { font-size:14px; }
-.h6, h6 { font-size:12px; }
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
+	font-family:$font-title; font-weight:$font-title-weight; display:block; line-height:$font-title-line-height; 
+	padding-bottom:$standard-pad; padding-top:($standard-pad/2);
+}
+.h1, h1 { font-size:60px; }
+.h2, h2 { font-size:50px; }
+.h3, h3 { font-size:40px; }
+.h4, h4 { font-size:34px; }
+.h5, h5 { font-size:30px; }
+.h6, h6 { font-size:25px; }
 
 
 
@@ -54,11 +68,17 @@ textarea,
 input[type="text"],
 input[type="password"],
 input[type="email"] { 
-	font-size:$font-size-a; font-family:$font-stack-a; width:97%;
+	font-size:$font-paragraph-size; font-family:$font-paragraph;
+	width:97%;
 	border:solid 1px $border-color-a; border-top-color:$border-color-b; padding:3px 1%;
 }
 textarea { height:100px; }
 label.error { color:$color-error; }
+
+textarea:hover, textarea:focus,
+input[type="text"]:hover,input[type="text"]:focus,
+input[type="password"]:hover,input[type="password"]:focus,
+input[type="email"]:hover,input[type="email"]:focus {}
 
 
 
@@ -67,7 +87,11 @@ label.error { color:$color-error; }
 
 /* Buttons
 #################################################################################################### */
-.btn { cursor:pointer; display:inline-block; padding:2px 6px; }
+.btn,
+input[type="submit"],input[type="button"] {
+	cursor:pointer; display:inline-block; padding:($standard-pad/2) ($standard-pad); 
+	background:none; border:none;
+}
 
 
 
@@ -124,17 +148,18 @@ label.error { color:$color-error; }
 
 .hentry { position:relative; }
 #loop-default {
-	.hentry { padding:45px 0 15px 0; }
-	.hentry:first-child { padding:0 0 15px 0; }
+	padding-bottom:($standard-pad*4);
+	.hentry { padding:($standard-pad*4) 0 ($standard-pad*2) 0; }
+	.hentry:first-child { padding:0 0 ($standard-pad*2) 0; }
 }
 
 
 
 /* Meta Data */
-.meta-data {}
+.meta-data { font-style:italic; padding-bottom:$standard-pad; }
 
-.post-comments { padding:0 7px 0 0; }
-.post-date { padding:0 7px 0 0; }
+.post-comments { padding:0 $standard-pad 0 0; }
+.post-date { padding:0 $standard-pad 0 0; }
 .read-more-dots { display:none; }
 
 
@@ -148,17 +173,17 @@ label.error { color:$color-error; }
 a.read_more { text-decoration:underline; font-style:italic; display:block; }
 
 .entry {
-	.aligncenter { display:block; margin:0 auto 15px; }
+	.aligncenter { display:block; margin:0 auto $standard-pad; }
 	.alignnone { clear:both; float:none; }
-	.alignleft { margin-right:3px; margin-bottom:3px; }
-	.alignright { margin-left:3px; margin-bottom:3px; }
+	.alignleft { margin-right:$standard-pad; margin-bottom:3px; }
+	.alignright { margin-left:$standard-pad; margin-bottom:3px; }
 	img { max-width:100% !important; height:auto !important; }
 	img.wp-smiley { border:none; margin:0; padding:0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-    p { padding-bottom:20px; }
+    p { padding-bottom:($standard-pad*2); }
     blockquote {
 		p { padding:0; margin:10px 45px 20px 20px; }
 	}
-	ol, ul { margin:5px 0 15px 20px; }
+	ol, ul { margin:$standard-pad 0 ($standard-pad*2) 20px; }
 	ul { list-style:disc; }
 	ol { list-style:decimal; }
 	li { padding-bottom:7px; }
@@ -170,7 +195,7 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 	}
 } /*end .entry */
 
-.excerpt p { padding-bottom:10px; }
+.excerpt p { padding-bottom:($standard-pad*2); }
 
 
 

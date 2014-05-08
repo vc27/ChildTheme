@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 05.08.14 - 3.7.0
+- update scss default with new variables
+
 ### 04.08.14 - 3.6.0
 - update wpseo
 - add login js
