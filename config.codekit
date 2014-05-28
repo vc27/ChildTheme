@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16895",
+"creatorBuild": "16921",
 "files": {
 	"\/addons\/AdminCustomizationsWP.php": {
 		"fileType": 8192,
@@ -20,142 +20,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/addons\/TwitterWP\/css\/style.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/css\/style.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/images\/bg-twitter-header.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1149,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/images\/bg-twitter-header.png",
-		"outputAbbreviatedPath": "\/addons\/TwitterWP\/images\/bg-twitter-header.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/addons\/TwitterWP\/images\/bg-twitter-stream-left.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3707,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/images\/bg-twitter-stream-left.png",
-		"outputAbbreviatedPath": "\/addons\/TwitterWP\/images\/bg-twitter-stream-left.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/addons\/TwitterWP\/images\/bg-twitter-stream-x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 166,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/images\/bg-twitter-stream-x.png",
-		"outputAbbreviatedPath": "\/addons\/TwitterWP\/images\/bg-twitter-stream-x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/addons\/TwitterWP\/initiate.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/initiate.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/js\/moment.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/js\/moment.js",
-		"outputAbbreviatedPath": "\/addons\/TwitterWP\/js\/min\/moment-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/addons\/TwitterWP\/js\/tweets.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/js\/tweets.js",
-		"outputAbbreviatedPath": "\/addons\/TwitterWP\/js\/min\/tweets-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 0
-		},
-	"\/addons\/TwitterWP\/TwitterDoAjaxWP.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/TwitterDoAjaxWP.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/twitteroauth\/OAuth.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/twitteroauth\/OAuth.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/twitteroauth\/twitteroauth.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/twitteroauth\/twitteroauth.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/TwitterOauthWP.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/TwitterOauthWP.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/TwitterOptionsPageWP.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/TwitterOptionsPageWP.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/TwitterWidgetWP.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/TwitterWidgetWP.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/addons\/TwitterWP\/TwitterWP.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/addons\/TwitterWP\/TwitterWP.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/addons\/WPSEOEdits.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -167,11 +31,11 @@
 		},
 	"\/change-log.md": {
 		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
+		"enableSmartyPants": 0,
+		"expandTabs": 0,
 		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/change-log.md",
 		"outputAbbreviatedPath": "\/change-log.html",
 		"outputPathIsOutsideProject": 0,
@@ -230,6 +94,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/js\/adminLogin.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/adminLogin.js",
+		"outputAbbreviatedPath": "\/js\/min\/adminLogin-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/js\/childTheme.js": {
 		"fileType": 64,
@@ -447,15 +322,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
-		},
-	"\/tpl-twitter.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-twitter.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
@@ -554,6 +420,14 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"no_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"no_empty_param_list": {
 			"active": 0,
 			"flagValue": -1
@@ -563,6 +437,10 @@
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -588,6 +466,10 @@
 			},
 		"no_trailing_whitespace": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_unnecessary_double_quotes": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"non_empty_constructor_needs_parens": {
@@ -709,7 +591,7 @@
 			"flagValue": -1
 			},
 		"gcl": {
-			"active": 0,
+			"active": false,
 			"flagValue": -1
 			},
 		"globalstrict": {
@@ -825,7 +707,7 @@
 			"flagValue": -1
 			},
 		"onevar": {
-			"active": 0,
+			"active": false,
 			"flagValue": -1
 			},
 		"phantom": {
@@ -865,7 +747,7 @@
 			"flagValue": -1
 			},
 		"smarttabs": {
-			"active": 0,
+			"active": false,
 			"flagValue": -1
 			},
 		"strict": {
@@ -881,7 +763,7 @@
 			"flagValue": -1
 			},
 		"trailing": {
-			"active": 1,
+			"active": true,
 			"flagValue": -1
 			},
 		"typed": {
@@ -897,7 +779,7 @@
 			"flagValue": -1
 			},
 		"white": {
-			"active": 0,
+			"active": false,
 			"flagValue": -1
 			},
 		"withstmt": {

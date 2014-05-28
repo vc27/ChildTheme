@@ -34,6 +34,16 @@ class AdminCustomizationsWP {
 	
 	
 	/**
+	 * show_adminLogin
+	 * 
+	 * @access public
+	 * @var string
+	 **/
+	var $show_adminLogin = 0;
+	
+	
+	
+	/**
 	 * errors
 	 * 
 	 * @access public
@@ -182,7 +192,7 @@ class AdminCustomizationsWP {
 		if ( file_exists( get_stylesheet_directory() . "/css/admin-login.css" ) ) {
 			wp_enqueue_style( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/css/admin-login.css" );
 		}
-		if ( file_exists( get_stylesheet_directory() . "/js/adminLogin.js" ) ) {
+		if ( $this->show_adminLogin AND file_exists( get_stylesheet_directory() . "/js/adminLogin.js" ) ) {
 			wp_enqueue_script( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/js/adminLogin.js", array('jquery') );
 		}
 		

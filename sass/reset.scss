@@ -27,6 +27,7 @@ input[type="submit"],
 input[type="button"],
 button,
 .trigger{cursor:pointer;}
+select, input, textarea { -webkit-appearance: none; }
 .hide,.triggered{display:none;}
 .aligncenter{float:none;margin:0 auto;}
 .alignright{float:right;}

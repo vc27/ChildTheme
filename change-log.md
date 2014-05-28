@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 05.28.14 - 3.8.0
+- update login_enqueue_scripts
+
 ### 05.08.14 - 3.7.0
 - update scss default with new variables
 
