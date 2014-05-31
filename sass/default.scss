@@ -11,7 +11,7 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 @import 'bootstrap-responsive';
 
 /* Padding */
-$standard-pad: 15px;
+$pad: 15px;
 
 /* Paragraph */
 $font-paragraph: sans-serif;
@@ -42,17 +42,17 @@ $border-color-b: #666;
 body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; height:100%; }
 #page { position:relative; font-size:$font-paragraph-size; height:100%; }
 .outer-wrap { position:relative; height:100%; }
-.inner-wrap { max-width:$max-width-a; position:relative; margin:0 auto; text-align:left; }
+.inner-wrap { max-width:$max-width-a; padding-left:$pad; padding-right:$pad; position:relative; margin:0 auto; text-align:left; }
 
 a, a:visited { text-decoration:none; }
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
 	font-family:$font-title; font-weight:$font-title-weight; display:block; line-height:$font-title-line-height; 
-	padding-bottom:$standard-pad; padding-top:($standard-pad/2);
+	padding-bottom:$pad; padding-top:($pad/2);
 }
-.h1, h1 { font-size:60px; }
-.h2, h2 { font-size:50px; }
-.h3, h3 { font-size:40px; }
+.h1, h1 { font-size:50px; }
+.h2, h2 { font-size:44px; }
+.h3, h3 { font-size:38px; }
 .h4, h4 { font-size:34px; }
 .h5, h5 { font-size:30px; }
 .h6, h6 { font-size:25px; }
@@ -75,6 +75,11 @@ input[type="email"] {
 textarea { height:100px; }
 label.error { color:$color-error; }
 
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+::-moz-placeholder {}
+:-ms-input-placeholder {}
+
 textarea:hover, textarea:focus,
 input[type="text"]:hover,input[type="text"]:focus,
 input[type="password"]:hover,input[type="password"]:focus,
@@ -89,17 +94,9 @@ input[type="email"]:hover,input[type="email"]:focus {}
 #################################################################################################### */
 .btn,
 input[type="submit"],input[type="button"] {
-	cursor:pointer; display:inline-block; padding:($standard-pad/2) ($standard-pad); 
+	cursor:pointer; display:inline-block; padding:($pad/2) ($pad); 
 	background:none; border:none;
 }
-
-
-
-
-
-
-/* Blocks
-#################################################################################################### */
 
 
 
@@ -112,23 +109,24 @@ input[type="submit"],input[type="button"] {
 
 /* Main Navigation Links */
 #primary-navigation {
-	a { text-decoration:none; }
+	li { display:inline-block; }
+	a { display:inline-block; padding:0 ($pad/2); margin:0 ($pad/2); }
 	.current-menu-item a, a:hover {}
 }
 
 
 /* footer-navigation */
 #footer-navigation {
-	a {}
-	li { display:inline; padding:0 6px 0 0; margin:0 4px 0 0; }
+	li { display:inline-block; }
+	a { display:inline-block; padding:0 ($pad/2); margin:0 ($pad/2); }
 }
 
 
 /* Navigation */
 .navigation-post {
-	display:block; clear:both; text-align:left; padding:3px 7px;
-	.prev-post { padding-left:7px; }
-	.next-post { padding-right:7px; }
+	display:block; clear:both; text-align:left; padding:($pad/4) ($pad/2);
+	.prev-post { padding-left:($pad/2); }
+	.next-post { padding-right:($pad/2); }
 }
 
 .wp-pagenavi {
@@ -148,18 +146,18 @@ input[type="submit"],input[type="button"] {
 
 .hentry { position:relative; }
 #loop-default {
-	padding-bottom:($standard-pad*4);
-	.hentry { padding:($standard-pad*4) 0 ($standard-pad*2) 0; }
-	.hentry:first-child { padding:0 0 ($standard-pad*2) 0; }
+	padding-bottom:($pad*4);
+	.hentry { padding:($pad*4) 0 ($pad*2) 0; }
+	.hentry:first-child { padding:0 0 ($pad*2) 0; }
 }
 
 
 
 /* Meta Data */
-.meta-data { font-style:italic; padding-bottom:$standard-pad; }
+.meta-data { font-style:italic; padding-bottom:$pad; }
 
-.post-comments { padding:0 $standard-pad 0 0; }
-.post-date { padding:0 $standard-pad 0 0; }
+.post-comments { padding:0 $pad 0 0; }
+.post-date { padding:0 $pad 0 0; }
 .read-more-dots { display:none; }
 
 
@@ -173,17 +171,17 @@ input[type="submit"],input[type="button"] {
 a.read_more { text-decoration:underline; font-style:italic; display:block; }
 
 .entry {
-	.aligncenter { display:block; margin:0 auto $standard-pad; }
+	.aligncenter { display:block; margin:0 auto $pad; }
 	.alignnone { clear:both; float:none; }
-	.alignleft { margin-right:$standard-pad; margin-bottom:3px; }
-	.alignright { margin-left:$standard-pad; margin-bottom:3px; }
+	.alignleft { margin-right:$pad; margin-bottom:3px; }
+	.alignright { margin-left:$pad; margin-bottom:3px; }
 	img { max-width:100% !important; height:auto !important; }
 	img.wp-smiley { border:none; margin:0; padding:0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-    p { padding-bottom:($standard-pad*2); }
+    p { padding-bottom:($pad*2); }
     blockquote {
-		p { padding:0; margin:10px 45px 20px 20px; }
+		p { padding:0; margin:$pad ($pad*3) ($pad*1.5) ($pad*1.5); }
 	}
-	ol, ul { margin:$standard-pad 0 ($standard-pad*2) 20px; }
+	ol, ul { margin:$pad 0 ($pad*2) 20px; }
 	ul { list-style:disc; }
 	ol { list-style:decimal; }
 	li { padding-bottom:7px; }
@@ -195,7 +193,7 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 	}
 } /*end .entry */
 
-.excerpt p { padding-bottom:($standard-pad*2); }
+.excerpt p { padding-bottom:($pad*2); }
 
 
 
@@ -235,15 +233,23 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 
 /* Widget Areas
 #################################################################################################### */
-
-
-/* Menu indiv */
 .sidebar ul {
 	ul {}
 	li { margin-bottom:10px; }
 	li li { margin:0; }
-
 	.widget-box {}
+}
+
+
+
+
+
+
+/* Blocks
+#################################################################################################### */
+
+#header, #footer {
+	.inner-wrap { padding-top:$pad; padding-bottom:$pad; }
 }
 
 

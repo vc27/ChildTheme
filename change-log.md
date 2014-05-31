@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 05.30.14 - 3.9.0
+- standardize a few css items for a more clean start
+
 ### 05.28.14 - 3.8.0
 - update login_enqueue_scripts
 
