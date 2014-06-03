@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 06.02.14 - 3.10.0
+- update IE check to include get variable
+
 ### 05.30.14 - 3.9.0
 - standardize a few css items for a more clean start
 

@@ -28,6 +28,7 @@ $max-width-a: 940px;
 
 /*Colors*/
 $color-error: red;
+$color-gray: #eee;
 
 $border-color-a: #aaa;
 $border-color-b: #666;
@@ -75,6 +76,9 @@ input[type="email"] {
 textarea { height:100px; }
 label.error { color:$color-error; }
 
+/* remove webkit css
+select, input, textarea { -webkit-appearance: none; }*/
+
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
 ::-moz-placeholder {}
@@ -94,8 +98,8 @@ input[type="email"]:hover,input[type="email"]:focus {}
 #################################################################################################### */
 .btn,
 input[type="submit"],input[type="button"] {
-	cursor:pointer; display:inline-block; padding:($pad/2) ($pad); 
-	background:none; border:none;
+	cursor:pointer; display:inline-block; padding:($pad/2) ($pad);
+	background:$color-gray; border:none; font-size:$font-paragraph-size; font-family:$font-paragraph;
 }
 
 
@@ -187,9 +191,9 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 	li { padding-bottom:7px; }
 	strong {}
 	small { font-size:11px; }
-	table { line-height:18px; }
 	table {
-		table td { padding-right:7px; vertical-align:top; }
+		line-height:18px;
+		td { padding-right:7px; vertical-align:top; }
 	}
 } /*end .entry */
 
