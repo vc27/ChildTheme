@@ -16,7 +16,7 @@
  * @access public
  * @var int
  **/
-$ThemeCompatibility = 5.0;
+$ThemeCompatibility = 6.8;
 
 
 
@@ -181,7 +181,7 @@ class ChildTheme_VC {
 		
 		add_action( 'wp_enqueue_scripts', array( &$this, 'deregister' ), 10 );
 		
-		// Breadcrumb Navigation
+		// Breadcrumb Navigation -- to be removed
 		add_action( 'inner_wrap_top', array( &$this, 'breadcrumb_navigation' ) );
 		
 		// Login Scripts
@@ -408,8 +408,7 @@ class ChildTheme_VC {
 	/**
 	 * BreadCrumb Nav
 	 *
-	 * @version 0.1
-	 * @update	11.16.12
+	 * Note: this is slated for removal
 	 **/
 	function breadcrumb_navigation() {
 		
