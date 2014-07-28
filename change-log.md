@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 07.26.14 - 4.0.0
+- 
+
 ### 06.02.14 - 3.10.0
 - update IE check to include get variable
 

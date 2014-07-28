@@ -1,11 +1,8 @@
 <?php
 /**
- * File Name functions.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 2.4
- * @updated 04.14.14
  **/
 #################################################################################################### */
 
@@ -16,7 +13,7 @@
  * @access public
  * @var int
  **/
-$ThemeCompatibility = 6.8;
+$ThemeCompatibility = 6.9;
 
 
 
