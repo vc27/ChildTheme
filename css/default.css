@@ -23,7 +23,7 @@ Package: ParentTheme
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
 /* line 8, ../sass/reset.scss */
-html { width: 100% !important; height: 100%; }
+html { width: 100% !important; height: 100%; -webkit-tap-highlight-color: transparent; }
 
 /* line 9, ../sass/reset.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
@@ -80,7 +80,7 @@ ul.sortable li { cursor: move; }
 input[type="submit"], input[type="button"], button, .trigger { cursor: pointer; }
 
 /* line 32, ../sass/reset.scss */
-.hide, .triggered { display: none; }
+.hide, .triggered { display: none !important; }
 
 /* line 33, ../sass/reset.scss */
 .aligncenter { float: none; margin: 0 auto; }
