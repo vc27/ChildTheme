@@ -53,6 +53,13 @@ class ChildTheme_VC {
 	
 	
 	
+	/**
+	 * ajax_action
+	 **/
+	var $ajax_action = 'vc-ajax';
+	
+	
+	
 	
 	
 	
@@ -70,7 +77,6 @@ class ChildTheme_VC {
 		
 		$this->set( 'stylesheet_directory', get_stylesheet_directory() );
 		$this->set( 'stylesheet_directory_uri', get_stylesheet_directory_uri() );
-		$this->set( 'ajax_action', 'vc-ajax' );
 		
 	} // end function __construct
 	
@@ -87,6 +93,7 @@ class ChildTheme_VC {
 	 **/
 	function init_child_theme() {
 		
+		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
 		add_action( 'init', array( &$this, 'init' ) );
 		
 	} // end function init_child_theme
@@ -124,8 +131,11 @@ class ChildTheme_VC {
 	function after_setup_theme() {
 		
 		// Translations can be added to the /languages/ directory.
-		load_theme_textdomain( 'childtheme', "$this->stylesheet_directory/languages" );
-		load_theme_textdomain( 'parenttheme', $this->parent_theme->template_directory . "/languages" );
+		// load_theme_textdomain( 'childtheme', "$this->stylesheet_directory/languages" );
+		// load_theme_textdomain( 'parenttheme', $this->parent_theme->template_directory . "/languages" );
+		
+		add_theme_support('parent-theme-options');
+		add_theme_support('video-oembed-post-meta');
 		
 	} // end function after_setup_theme
 	
