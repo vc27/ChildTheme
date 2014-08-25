@@ -12,6 +12,7 @@
  * 
  * @access public
  * @var int
+ * @since 4.0.0
  **/
 $ThemeCompatibility = 6.9;
 
@@ -19,6 +20,7 @@ $ThemeCompatibility = 6.9;
 
 /**
  * Initiate Addons
+ * @since 4.0.0
  **/
 require_once( "addons/initiate-addons.php" );
 
@@ -28,23 +30,19 @@ require_once( "addons/initiate-addons.php" );
 
 
 /**
- * ChildTheme_VC Class
- *
- * @version 1.5
- * @updated 10.17.13
+ * ChildTheme
+ * @since 4.0.0
  **/
-$ChildTheme_VC = new ChildTheme_VC();
-$ChildTheme_VC->set( 'ThemeCompatibility', $ThemeCompatibility );
-$ChildTheme_VC->init_child_theme();
-class ChildTheme_VC {
+$ChildTheme = new ChildTheme();
+$ChildTheme->set( 'ThemeCompatibility', $ThemeCompatibility );
+$ChildTheme->init_child_theme();
+class ChildTheme {
 	
 	
 	
 	/**
 	 * is_IE
-	 *
-	 * @version 1.0
-	 * @updated 06.02.14
+	 * @since 4.0.0
 	 **/
 	var $is_IE = false;
 	
@@ -52,8 +50,9 @@ class ChildTheme_VC {
 	
 	/**
 	 * ajax_action
+	 * @since 4.0.0
 	 **/
-	var $ajax_action = 'vc-ajax';
+	var $ajax_action = 'theme-ajax';
 	
 	
 	
@@ -62,9 +61,7 @@ class ChildTheme_VC {
 	
 	/**
 	 * __construct
-	 *
-	 * @version 1.0
-	 * @updated 10.17.13
+	 * @since 4.0.0
 	 **/
 	function __construct() {
 		
@@ -84,9 +81,7 @@ class ChildTheme_VC {
 	
 	/**
 	 * init_child_theme
-	 *
-	 * @version 1.0
-	 * @updated 10.17.13
+	 * @since 4.0.0
 	 **/
 	function init_child_theme() {
 		
@@ -102,9 +97,7 @@ class ChildTheme_VC {
 	
 	/**
      * set
-     *
-     * @version 1.0
-     * @updated 00.00.13
+	 * @since 4.0.0
      **/
     function set( $key, $val = false ) {
 
@@ -120,10 +113,8 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * After Setup Theme
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
+	 * after_setup_theme
+	 * @since 4.0.0
 	 **/
 	function after_setup_theme() {
 		
@@ -142,93 +133,29 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * Initiate
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
+	 * init
+	 * @since 4.0.0
 	 **/
 	function init() {
 		
-		// Add Parent Theme class
-		$this->set( 'parent_theme', new ParentTheme_VC() );
-		
-		
-		// register_sidebars
-		$register_sidebars = $this->parent_theme->register_sidebars( array(
+		$this->set( 'parent_theme', new ParentTheme() );
+		$this->parent_theme->register_sidebars( array(
 			'Primary Sidebar' => array(
 				'desc' => 'This is the primary widgetized area.',
 			),
 		) );
-		
-		
-		// register_nav_menus
 		register_nav_menus( array(
 			'primary-navigation' => 'Primary Navigation',
 			'footer-navigation' => 'Footer Navigation'
 		) );
 		
-		
-		// register styles and scripts
 		$this->register_style_and_scripts();
 		
-		
-		/**
-		 * Front End - Enqueue, Print & other menial labor
-		 **/
-		
-		// Layout Options
 		add_action( 'template_redirect', array( &$this, 'layout_options' ) );
-		
-		// CSS // wp_print_styles
-		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_print_styles' ) );
-		
-		// Javascripts // wp_enqueue_scripts // wp_print_scripts
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
-		add_filter( 'parenttheme-localize_script', array( &$this, 'localize_script' ) );
-		
-		add_action( 'wp_enqueue_scripts', array( &$this, 'deregister' ), 10 );
-		
-		// Breadcrumb Navigation -- to be removed
-		add_action( 'inner_wrap_top', array( &$this, 'breadcrumb_navigation' ) );
-		
-		// Login Scripts
-		add_action( 'login_enqueue_scripts', array( &$this, 'login_enqueue_scripts' ) );
+		add_filter( 'parenttheme-localize_script', array( &$this, 'filter_localize_script' ) );
 		
 	} // end function init
-	
-	
-	
-	
-	
-	
-	/**
-	 * Admin Initiate
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
-	 **/
-	function admin_init() {
-		
-		
-		
-	} // end function admin_init 
-	
-	
-	
-	
-	
-	
-	/**
-	 * Widgets Initiate
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
-	 **/
-	function widgets_init() {
-		
-		// widgets_init
-		
-	} // end function widgets_init
 	
 	
 	
@@ -248,9 +175,7 @@ class ChildTheme_VC {
 	
 	/**
 	 * register_style_and_scripts
-	 *
-	 * @version 2.1
-	 * @updated 04.15.14
+	 * @since 4.0.0
 	 **/
 	function register_style_and_scripts() {
 		global $is_IE;
@@ -270,23 +195,6 @@ class ChildTheme_VC {
 	
 	
 	
-	/**
-	 * deregister
-	 *
-	 * @version 2.0
-	 * @updated 03.14.14
-	 **/
-	function deregister() {
-		
-		wp_deregister_script('helper');
-		
-	} // end function deregister
-	
-	
-	
-	
-	
-	
 	####################################################################################################
 	/**
 	 * Front End - Enqueue, Print & other menial labor
@@ -299,27 +207,19 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * Add Actions
-	 * 
-	 * @version 1.2
-	 * @updated	11.18.12
-	 * 
-	 * These actions will add various items to the site.
-	 * You are free to turn them off or move them around.
-	 * 
-	 * ToDo: remove apply_filters. add_action is the same thing, 
-	 * this is doubling up on an item that does not need it.
+	 * layout_options
+	 * @since 4.0.0
 	 **/
 	function layout_options() {
 		
 		// Archive Post Navigation
-		add_action( 'vc_below_loop', 'vc_navigation_posts' );
+		add_action( 'after_loop', 'previous_next___posts_link' );
 		
 		// Single Post Navigation
-		add_action( 'vc_below_loop', 'vc_navigation_post' );
+		add_action( 'after_loop', 'previous_next___post_link' );
 		
 		// Add Page Title
-		add_action( 'inner_wrap_top', 'vc_page_title' );
+		add_action( 'section-main-top', 'archive__title' );
 
 
 	} // end function layout_options
@@ -330,15 +230,14 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * wp_print_styles
-	 *
-	 * @version 2.1
-	 * @updated 04.15.14
+	 * wp_enqueue_scripts
+	 * @since 4.0.0
 	 **/
-	function wp_print_styles() {
-		
-		wp_enqueue_style( 'childtheme-default' );
+	function wp_enqueue_scripts() {
 		global $is_IE, $wp_styles;
+		
+		// Styles
+		wp_enqueue_style( 'childtheme-default' );
 		if ( $is_IE OR $this->is_IE ) {
 			wp_enqueue_style( 'IE8' );
 			wp_enqueue_style( 'IE9' );
@@ -347,22 +246,8 @@ class ChildTheme_VC {
 				$wp_styles->add_data( 'IE9', 'conditional', 'lt IE 10' );
 			}
 		}
-
-	} // end function wp_print_styles
-	
-	
-	
-	
-	
-	
-	/**
-	 * Enqueue Scripts
-	 *
-	 * @version 2.0
-	 * @updated 03.14.14
-	 **/
-	function wp_enqueue_scripts() {
 		
+		// Scripts
 		wp_enqueue_script( 'childTheme' );
 		
 	} // function wp_enqueue_scripts 
@@ -373,103 +258,19 @@ class ChildTheme_VC {
 	
 	
 	/**
-	 * Localize Scripts
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
+	 * filter_localize_script
+	 * @since 4.0.0
 	 **/
-	function localize_script( $array ) {
+	function filter_localize_script( $array ) {
 		
 		$array['action'] = $this->ajax_action;
 		$array['ajaxurl'] = admin_url( 'admin-ajax.php' );
 		
 		return $array;
 		
-	} // function localize_script
+	} // function filter_localize_script
 	
 	
 	
 	
-	
-	
-	/**
-	 * login_enqueue_scripts
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
-	 *
-	 * Note: You can use the login_enqueue_scripts hook to insert CSS
-	 * reference: http://codex.wordpress.org/Customizing_the_Login_Form#Change_the_Login_Logo
-	 **/
-	function login_enqueue_scripts() {
-		
-		wp_enqueue_style( 'login-style' );
-		
-	} // end function login_enqueue_scripts
-	
-	
-	
-	
-	
-	
-	/**
-	 * BreadCrumb Nav
-	 *
-	 * Note: this is slated for removal
-	 **/
-	function breadcrumb_navigation() {
-		
-		if ( ! get_vc_option( 'post_display', 'childpage_breadcrumb' ) ) {
-			return;
-		} else {
-			
-			require_once( $this->parent_theme->template_directory . "/includes/classes/Breadcrumb_Navigation_VC.php" );
-			
-			// Breadcrumb Navigation
-			$this->set( 'breadcrumb', new Breadcrumb_Navigation_VC() );
-			$this->breadcrumb->breadcrumb_navigation( array(
-				'before' => '<div id="navigation-breadcrumb-inner-wrap">',
-				'after' => '</div>',
-			) );
-			
-		}
-		
-	} // end function breadcrumb_navigation
-	
-	
-	
-	
-	
-	
-	####################################################################################################
-	/**
-	 * Child Theme Options
-	 **/
-	####################################################################################################
-	
-	
-	
-	
-	
-	
-	/**
-	 * Child Options
-	 *
-	 * @version 1.0
-	 * @updated 11.18.12
-	 * 
-	 * Notes:
-	 * This function can be used to filter the default options.
-	 * e.g. remove an options metabox or alter a portion of the 
-	 * default array from includes / options / default-options.php
-	 **/
-	function filter_default_vc_options( $default_options ) {
-		
-		return $default_options;
-		
-	} // function filter_default_vc_options
-	
-	
-	
-	
-} // end class ChildTheme_VC
+} // end class ChildTheme

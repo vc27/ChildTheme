@@ -19,7 +19,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	require_once( get_template_directory() . "/includes/initiate-lib.php" );
 	
 	// Added Functionality
-	// require_once( "ThemeSupport/initiate.php" );
+	require_once( "ACFThemeOptionsWP.php" );
 	require_once( "AdminCustomizationsWP.php" );
 	require_once( "WPSEOEdits.php" );
 	

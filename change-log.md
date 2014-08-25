@@ -2,7 +2,7 @@ ChangeLog
 ====================
 
 ### 07.26.14 - 4.0.0
-- 
+- clean out functions.php with new functions from ParentTheme 6.9
 
 ### 06.02.14 - 3.10.0
 - update IE check to include get variable
