@@ -8,7 +8,7 @@
             "name": "_comment_system_deactivated",
             "prefix": "",
             "type": "true_false",
-            "instructions": "By checking this box you are turning off the commenting system for default wordpress post types.",
+            "instructions": "By checking this box you are turning off the display of the default wordpress post types.",
             "required": 0,
             "conditional_logic": 0,
             "message": "",
