@@ -13,7 +13,7 @@ get_template_part( 'header' );
 ?>
 <div class="row-fluid">
 	<div class="span8">
-		<?php get_template_part( 'loop-default' ); ?>
+		<?php get_template_part( 'loop-page-default' ); ?>
 	</div>
 	<div class="span4">
 		<?php get__widget_area( 'Primary Sidebar' ); ?>
