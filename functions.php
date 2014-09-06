@@ -125,6 +125,11 @@ class ChildTheme {
 		add_theme_support('parent-theme-options');
 		add_theme_support('video-oembed-post-meta');
 		
+		// add_image_size( 'standard', 300, 300, false );
+		// add_image_size( 'medium', 600, 1000, false );
+		// add_image_size( 'large', 1000, 2000, false );
+		// add_image_size( 'large-ex', 2000, 4000, false );
+		
 	} // end function after_setup_theme
 	
 	

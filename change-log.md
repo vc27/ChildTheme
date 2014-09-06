@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 09.06.14 - 4.0.1
+- clean up header footer css
+
 ### 07.26.14 - 4.0.0
 - clean out functions.php with new functions from ParentTheme 6.9
 
