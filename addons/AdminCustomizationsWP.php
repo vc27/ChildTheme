@@ -252,6 +252,11 @@ class AdminCustomizationsWP {
 			remove_menu_page( 'edit.php?post_type=acf' );
 			remove_menu_page( 'google_universal_analytics' );
 		}
+		
+		if ( ! is__user('randy') ) {
+			remove_menu_page( 'edit.php?post_type=acf' );
+			remove_menu_page( 'edit.php?post_type=acf-field-group' );
+		}
         
     } // end function remove_mene_page
 

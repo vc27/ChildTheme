@@ -120,17 +120,17 @@ legend {
 svg:not(:root) { 
 	overflow:hidden;
 }
-.clearfix:before, .clearfix:after {
-	content: "\0020"; 
-	display: block; 
-	height: 0; 
-	visibility: hidden;
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
 }
 .clearfix:after {
-	clear: both;
-}
-.clearfix {
-	zoom: 1;
+  clear: both;
 }
 .sf-menu, .sf-menu * { 
 	margin:0;

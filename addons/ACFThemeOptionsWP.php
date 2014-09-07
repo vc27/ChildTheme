@@ -163,10 +163,6 @@ class ACFThemeOptionsWP {
 				'capability' => 'manage_options'
 			) );
 			
-			$GLOBALS['acf_options_page']->settings['show_parent'] = 0;
-			
-			// print_r($GLOBALS['acf_options_page']); die();
-			
 		}
 		
 	} // end function add_options

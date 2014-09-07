@@ -8,7 +8,6 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 @import 'mixins';
 
 
-/* Padding */
 $transition: all 0.1s ease-in;
 $radius: 4px;
 
@@ -43,7 +42,7 @@ $c-red-b: #dd5951;
 
 html { height:100%; }
 body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
-#page { position:relative; font-size:$font-paragraph-size; height:100%; }
+#page { position:relative; font-size:$font-paragraph-size; height:100%; @extend .clearfix }
 .outer-wrap { position:relative; }
 .inner-wrap { max-width:$max-width-a; padding-left:10px; padding-right:10px; position:relative; margin:0 auto; text-align:left; }
 

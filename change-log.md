@@ -1,6 +1,10 @@
 ChangeLog
 ====================
 
+### 09.07.14 - 4.0.2
+- finish acf options
+- clean a little css
+
 ### 09.06.14 - 4.0.1
 - clean up header footer css
 
