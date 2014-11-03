@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 11.03.14 - 4.1.0
+- update reset with better fade.in fade.out
+
 ### 09.07.14 - 4.0.2
 - finish acf options
 - clean a little css

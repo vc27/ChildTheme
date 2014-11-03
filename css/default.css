@@ -148,13 +148,13 @@ svg:not(:root) { overflow: hidden; }
 * :focus { outline: 0; }
 
 /* line 166, ../sass/reset.scss */
-.fade { opacity: 0; -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
+.fade { opacity: 0; -webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -o-transition: all 0.1s ease-in; transition: all 0.1s ease-in; }
 
 /* line 170, ../sass/reset.scss */
-.fade.in { opacity: 1; }
+.fade.in { opacity: 1 !important; pointer-events: auto !important; }
 
 /* line 171, ../sass/reset.scss */
-.fade.out { opacity: 0; }
+.fade.out { opacity: 0; pointer-events: none; }
 
 /*!
  * Bootstrap Responsive v2.3.1

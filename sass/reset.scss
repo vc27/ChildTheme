@@ -165,7 +165,7 @@ svg:not(:root) {
 }
 .fade { 
 	opacity:0;
-	@include transition(opacity 0.15s linear);
+	@include transition();
 }
-.fade.in{ opacity:1; }
-.fade.out{ opacity:0; }
+.fade.in { opacity:1 !important; pointer-events:auto !important; }
+.fade.out { opacity:0; pointer-events:none; }
