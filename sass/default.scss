@@ -28,13 +28,13 @@ $max-width-c: 568px;
 $max-width-d: 480px;
 
 /*Gray*/
-$c-gray-a: #fafafa;
-$c-gray-b: #adadad;
-$c-gray-c: #a3a3a3;
+$gray-a: #fafafa;
+$gray-b: #adadad;
+$gray-c: #a3a3a3;
 
 /*Red*/
-$c-red-a: #f5cdca;
-$c-red-b: #dd5951;
+$red-a: #f5cdca;
+$red-b: #dd5951;
 
 /* Reset */
 @import 'reset';
@@ -42,11 +42,11 @@ $c-red-b: #dd5951;
 
 html { height:100%; }
 body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
-#page { position:relative; font-size:$font-paragraph-size; height:100%; @extend .clearfix }
+#page { position:relative; font-size:$font-paragraph-size; @extend .clearfix; }
 .outer-wrap { position:relative; }
 .inner-wrap { max-width:$max-width-a; padding-left:10px; padding-right:10px; position:relative; margin:0 auto; text-align:left; }
 
-a, a:visited { text-decoration:none; }
+.a, a, a:visited { cursor:pointer; text-decoration:none; }
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
 	font-family:$font-title; font-weight:$font-title-weight; display:block; line-height:$font-title-line-height; 
@@ -65,6 +65,19 @@ a, a:visited { text-decoration:none; }
 
 
 
+/* custom mixins
+#################################################################################################### */
+@mixin remove-section-main-inner-wrap() {
+	.inner-wrap.section-main-inner-wrap { max-width:100000px; padding:0; }
+	#section-main { padding-top:0; }
+}
+
+
+
+
+
+
+
 /* Forms
 #################################################################################################### */
 textarea,
@@ -73,10 +86,10 @@ input[type="password"],
 input[type="email"] { 
 	font-size:$font-paragraph-size; font-family:$font-paragraph;
 	width:95%; padding:6px 2%;
-	border:none; background:$c-gray-a; @include border-radius();
+	border:none; background:$gray-a; @include border-radius();
 }
 textarea { height:100px; }
-label.error { color:$c-red-a; }
+label.error { color:$red-a; }
 label { cursor:pointer; }
 
 /* remove webkit css
@@ -103,7 +116,7 @@ input[type="email"]:hover,input[type="email"]:focus {
 #################################################################################################### */
 .btn, 
 input[type="submit"],input[type="button"], button {
-	cursor:pointer; display:inline-block; padding:6px 20px; background:$c-gray-a; border:none;
+	cursor:pointer; display:inline-block; padding:6px 20px; background:$gray-a; border:none;
 	line-height:$font-paragraph-line-height; font-family:$font-paragraph; font-size:$font-paragraph-size;
 }
 
@@ -146,7 +159,7 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 
 /* Meta Data */
 .meta-data { 
-	color:$c-gray-b; font-family:$font-title; font-style:italic;
+	color:$gray-b; font-family:$font-title; font-style:italic;
 	display:block; padding:10px; 
 	.post-date, .post-category, .post-comments {
 		padding:0 10px 0 0;

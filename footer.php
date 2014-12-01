@@ -8,7 +8,6 @@
 
 ?>
 			<?php do_action('section-main-bottom'); ?>
-			<div class="clear"></div>
 		</div>
 	</div><!-- End section-main -->
 	

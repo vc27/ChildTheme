@@ -1,6 +1,12 @@
 ChangeLog
 ====================
 
+### 12.01.14 - 4.2.0
+- remove a clear div
+- add section-main-inner-wrap to primary inner-wrap
+- clean IE scss files
+- update @mixin box-sizing
+
 ### 11.03.14 - 4.1.0
 - update reset with better fade.in fade.out
 

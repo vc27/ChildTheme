@@ -1,21 +1,15 @@
 <?php
 /**
- * File Name initiate-addons.php
  * @package WordPress
  * @subpackage ParentTheme
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.2
- * @updated 10.02.13
- *
- * Description:
- * Include core functionality, activation and theme functions.
  **/
 #################################################################################################### */
 
 
 if ( ! defined('THEME_ADDONS_INIT') ) {
 	
-	// Init ParentTheme_VC lib
+	// Init ParentTheme lib
 	require_once( get_template_directory() . "/includes/initiate-lib.php" );
 	
 	// Added Functionality
