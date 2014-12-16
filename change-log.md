@@ -1,3 +1,11 @@
+ToDo
+====================
+- update .inner-wrap to use extend clearfix, remove clearfix from tempaltes
+- use @mixins for font classes rather than current veraible based settings
+- remove social networks options metabox
+- update default options metaboxes with position number 100 or something there abouts
+- add function for angular, but keep them commented out for quick addition
+
 ChangeLog
 ====================
 

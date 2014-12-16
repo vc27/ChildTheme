@@ -92,8 +92,14 @@ textarea { height:100px; }
 label.error { color:$red-a; }
 label { cursor:pointer; }
 
-/* remove webkit css
-select, input, textarea { -webkit-appearance: none; }*/
+/* remove webkit css */
+select, input, textarea { 
+	-webkit-appearance: none; 
+	-moz-appearance:window;
+}
+select::-ms-expand {
+    display: none;
+}
 
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
