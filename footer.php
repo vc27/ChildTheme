@@ -13,7 +13,7 @@
 	
 	<!-- Start Footer -->
 	<div id="section-footer" class="outer-wrap">
-		<div class="clearfix inner-wrap">
+		<div class="inner-wrap">
 			<?php 
 			
 			wp_nav_menu( array( 

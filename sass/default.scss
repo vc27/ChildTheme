@@ -10,16 +10,23 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 $transition: all 0.1s ease-in;
 $radius: 4px;
-
-/* Paragraph */
 $font-paragraph: sans-serif;
 $font-paragraph-size: 15px;
 $font-paragraph-line-height: 26px;
 
-/* Title */
-$font-title: serif;
-$font-title-weight: 400; 
-$font-title-line-height: 1.1em;
+@mixin paragraph() {
+	font-family:$font-paragraph;
+	font-size:$font-paragraph-size; 
+	line-height:$font-paragraph-line-height;
+}
+@mixin title() {
+	font-family:serif;
+	line-height:1.1em;
+	font-weight:400;
+}
+@mixin med-text() { font-size:18px; }
+@mixin sml-text() { font-size:14px; line-height:18px; }
+@mixin sml-text-ex() { @include sml-text(); font-size:13px; }
 
 /* Block */
 $max-width-a: 940px;
@@ -44,13 +51,15 @@ html { height:100%; }
 body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
 #page { position:relative; font-size:$font-paragraph-size; @extend .clearfix; }
 .outer-wrap { position:relative; }
-.inner-wrap { max-width:$max-width-a; padding-left:10px; padding-right:10px; position:relative; margin:0 auto; text-align:left; }
+.inner-wrap { @extend .clearfix; max-width:$max-width-a; padding-left:10px; padding-right:10px; position:relative; margin:0 auto; text-align:left; }
 
 .a, a, a:visited { cursor:pointer; text-decoration:none; }
+.em { font-style:italic; }
+.ic .text { display:none; }
+.featured-image { @include featured-image(); }
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
-	font-family:$font-title; font-weight:$font-title-weight; display:block; line-height:$font-title-line-height; 
-	padding-bottom:10px; padding-top:5px;
+	display:block; @include title();
 }
 
 .h1, h1 { font-size:46px; }
@@ -59,6 +68,10 @@ body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
 .h4, h4 { font-size:30px; }
 .h5, h5 { font-size:26px; }
 .h6, h6 { font-size:20px; }
+
+.h1.slim, .h2.slim, .h3.slim, .h4.slim, .h5.slim, .h6.slim {
+	font-weight:300;
+}
 
 
 
@@ -84,7 +97,7 @@ textarea,
 input[type="text"],
 input[type="password"],
 input[type="email"] { 
-	font-size:$font-paragraph-size; font-family:$font-paragraph;
+	@include paragraph();
 	width:95%; padding:6px 2%;
 	border:none; background:$gray-a; @include border-radius();
 }
@@ -92,7 +105,7 @@ textarea { height:100px; }
 label.error { color:$red-a; }
 label { cursor:pointer; }
 
-/* remove webkit css */
+/* remove webkit css
 select, input, textarea { 
 	-webkit-appearance: none; 
 	-moz-appearance:window;
@@ -100,6 +113,7 @@ select, input, textarea {
 select::-ms-expand {
     display: none;
 }
+*/
 
 ::-webkit-input-placeholder {}
 :-moz-placeholder {}
@@ -123,7 +137,7 @@ input[type="email"]:hover,input[type="email"]:focus {
 .btn, 
 input[type="submit"],input[type="button"], button {
 	cursor:pointer; display:inline-block; padding:6px 20px; background:$gray-a; border:none;
-	line-height:$font-paragraph-line-height; font-family:$font-paragraph; font-size:$font-paragraph-size;
+	@include paragraph();
 }
 
 .btn:hover,
@@ -165,7 +179,7 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 
 /* Meta Data */
 .meta-data { 
-	color:$gray-b; font-family:$font-title; font-style:italic;
+	color:$gray-b; font-style:italic;
 	display:block; padding:10px; 
 	.post-date, .post-category, .post-comments {
 		padding:0 10px 0 0;
@@ -247,9 +261,6 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 /* Widget Areas
 #################################################################################################### */
 .sidebar {
-	ul {}
-	li { margin-bottom:10px; }
-	li li { margin:0; }
 	.widget-box {}
 }
 
@@ -260,21 +271,6 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 
 /* Blocks
 #################################################################################################### */
-
-#header {
-	#primary-navigation {
-		li { display:inline-block; }
-		a { display:inline-block; padding:0 20px; margin:0; @include transition($transition); }
-		.current-menu-item a, a:hover {}
-	}
-}
-#footer {
-	.inner-wrap { text-align:center; padding:10px; }
-	#footer-navigation {
-		li { display:inline-block; }
-		a { display:inline-block; padding:0 10px; margin:0; }
-	}
-}
 
 
 

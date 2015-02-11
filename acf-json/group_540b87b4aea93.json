@@ -11,6 +11,11 @@
             "instructions": "Default html will be use for domainname.com\/favicon.ico",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "message": "",
             "default_value": 0
         },
@@ -31,6 +36,11 @@
                     }
                 ]
             ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "url",
             "preview_size": "thumbnail",
             "library": "all"
@@ -44,6 +54,11 @@
             "instructions": "Please use caution. This content will be directly added to the <head> section of your html via wp_head action.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
@@ -61,6 +76,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
@@ -78,6 +98,11 @@
             "instructions": "Please use caution. This content will be added just above the closing body tag via wp_footer action.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
@@ -101,5 +126,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1423668192
 }

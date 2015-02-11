@@ -122,12 +122,12 @@ class ChildTheme {
 		// load_theme_textdomain( 'childtheme', "$this->stylesheet_directory/languages" );
 		// load_theme_textdomain( 'parenttheme', $this->parent_theme->template_directory . "/languages" );
 		
-		add_theme_support('video-oembed-post-meta');
+		// add_theme_support('video-oembed-post-meta');
 		
 		add_image_size( 'standard', 300, 300, false );
-		// add_image_size( 'medium', 600, 1000, false );
-		// add_image_size( 'large', 1000, 2000, false );
-		// add_image_size( 'large-ex', 2000, 4000, false );
+		add_image_size( 'medium', 600, 1000, false );
+		add_image_size( 'large', 1000, 2000, false );
+		add_image_size( 'large-ex', 2000, 4000, false );
 		
 	} // end function after_setup_theme
 	
@@ -141,6 +141,9 @@ class ChildTheme {
 	 * @since 4.0.0
 	 **/
 	function init() {
+		
+		add_filter( 'tag_html_attr', array( $this, 'tag_html_attr' ) );
+		// add_filter( 'tag_body_attr', array( $this, 'tag_body_attr' ) );
 		
 		$this->set( 'parent_theme', new ParentTheme() );
 		$this->parent_theme->register_sidebars( array(
@@ -185,7 +188,9 @@ class ChildTheme {
 		global $is_IE;
 		
 		wp_register_style( 'childtheme-default', "$this->stylesheet_directory_uri/css/default.css", array(), null );
-		wp_register_script( 'childTheme', "$this->stylesheet_directory_uri/js/min/childTheme-min.js", array('jquery'), null );
+		
+		wp_register_script( 'angular', "//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js", array('jquery'), null );
+		wp_register_script( 'siteScripts', "$this->stylesheet_directory_uri/js/min/siteScripts-min.js", array('jquery'), null );
 		
 		if ( $is_IE OR $this->is_IE ) {
 			wp_register_style( 'IE8', "$this->stylesheet_directory_uri/css/IE8.css", array(), null );
@@ -252,7 +257,8 @@ class ChildTheme {
 		}
 		
 		// Scripts
-		wp_enqueue_script( 'childTheme' );
+		wp_enqueue_script( 'angular' );
+		wp_enqueue_script( 'siteScripts' );
 		
 	} // function wp_enqueue_scripts 
 	
@@ -273,6 +279,38 @@ class ChildTheme {
 		return $array;
 		
 	} // function filter_localize_script
+	
+	
+	
+	
+	
+	
+	/**
+	 * tag_html_attr
+	 **/
+	function tag_html_attr( $attr ) {
+
+		$attr = " ng-app=\"ngApp\" ng-controller=\"ngAppCtrl\" ng-cloak";
+
+		return $attr;
+
+	} // end function tag_html_attr
+	
+	
+	
+	
+	
+	
+	/**
+	 * tag_body_attr
+	 **/
+	function tag_body_attr( $attr ) {
+
+		$attr = " ng-controller=\"anotherApp\"";
+
+		return $attr;
+
+	} // end function tag_body_attr
 	
 	
 	

@@ -1,11 +1,4 @@
 /**
- * Compiled Scripts
- *
- * @version 2.0
- * @updated 03.14.14
- **/
-
-/**
  * MBP - Mobile boilerplate helper functions
  */
 (function(document) {
@@ -409,4 +402,3 @@
     };
 
 })(document);
-function get_ie_version() { return; }

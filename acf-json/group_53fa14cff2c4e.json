@@ -11,6 +11,11 @@
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "404 Not Found",
             "placeholder": "",
             "prepend": "",
@@ -28,6 +33,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
@@ -42,6 +52,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "message": "",
             "default_value": 0
         }
@@ -60,5 +75,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1423668192
 }

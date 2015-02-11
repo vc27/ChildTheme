@@ -1,13 +1,16 @@
 ToDo
 ====================
-- update .inner-wrap to use extend clearfix, remove clearfix from tempaltes
-- use @mixins for font classes rather than current veraible based settings
-- remove social networks options metabox
-- update default options metaboxes with position number 100 or something there abouts
-- add function for angular, but keep them commented out for quick addition
+
+- update Admin Customizations to create user restrictions with out needing the "Members" plugin.
+- update settings classes to utilize wrapper functions
+- update the theme files to utilize "static" construction approach. Building it statically first then adding php where needed.
 
 ChangeLog
 ====================
+
+### 01.29.15 - 4.3.0
+- add angular as default
+- add template files for modal and loader
 
 ### 12.01.14 - 4.2.0
 - remove a clear div

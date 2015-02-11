@@ -8,8 +8,6 @@ File Name mixins.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #################################################################################################### */
-/* Paragraph */
-/* Title */
 /* Block */
 /*Gray*/
 /*Red*/
@@ -75,11 +73,11 @@ legend { display: none; }
 
 svg:not(:root) { overflow: hidden; }
 
-.clearfix, #page { *zoom: 1; }
+.clearfix, #page, .inner-wrap { *zoom: 1; }
 
-.clearfix:before, #page:before, .clearfix:after, #page:after { display: table; line-height: 0; content: ""; }
+.clearfix:before, #page:before, .inner-wrap:before, .clearfix:after, #page:after, .inner-wrap:after { display: table; line-height: 0; content: ""; }
 
-.clearfix:after, #page:after { clear: both; }
+.clearfix:after, #page:after, .inner-wrap:after { clear: both; }
 
 .sf-menu, .sf-menu * { margin: 0; padding: 0; list-style: none; }
 
@@ -390,7 +388,13 @@ body { line-height: 26px; font-family: sans-serif; }
 
 .a, a, a:visited { cursor: pointer; text-decoration: none; }
 
-.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { font-family: serif; font-weight: 400; display: block; line-height: 1.1em; padding-bottom: 10px; padding-top: 5px; }
+.em { font-style: italic; }
+
+.ic .text { display: none; }
+
+.featured-image { display: block; min-height: 100px; background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { display: block; font-family: serif; line-height: 1.1em; font-weight: 400; }
 
 .h1, h1 { font-size: 46px; }
 
@@ -404,11 +408,13 @@ body { line-height: 26px; font-family: sans-serif; }
 
 .h6, h6 { font-size: 20px; }
 
+.h1.slim, .h2.slim, .h3.slim, .h4.slim, .h5.slim, .h6.slim { font-weight: 300; }
+
 /* custom mixins
 #################################################################################################### */
 /* Forms
 #################################################################################################### */
-textarea, input[type="text"], input[type="password"], input[type="email"] { font-size: 15px; font-family: sans-serif; width: 95%; padding: 6px 2%; border: none; background: #fafafa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; }
+textarea, input[type="text"], input[type="password"], input[type="email"] { font-family: sans-serif; font-size: 15px; line-height: 26px; width: 95%; padding: 6px 2%; border: none; background: #fafafa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; }
 
 textarea { height: 100px; }
 
@@ -416,14 +422,17 @@ label.error { color: #f5cdca; }
 
 label { cursor: pointer; }
 
-/* remove webkit css */
-select, input, textarea { -webkit-appearance: none; -moz-appearance: window; }
-
-select::-ms-expand { display: none; }
-
+/* remove webkit css
+select, input, textarea { 
+	-webkit-appearance: none; 
+	-moz-appearance:window;
+}
+select::-ms-expand { display: none;
+}
+*/
 /* Buttons
 #################################################################################################### */
-.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; line-height: 26px; font-family: sans-serif; font-size: 15px; }
+.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; font-family: sans-serif; font-size: 15px; line-height: 26px; }
 
 /* General Links
 #################################################################################################### */
@@ -441,7 +450,7 @@ select::-ms-expand { display: none; }
 /* Post, Page & General Loops
 #################################################################################################### */
 /* Meta Data */
-.meta-data { color: #adadad; font-family: serif; font-style: italic; display: block; padding: 10px; }
+.meta-data { color: #adadad; font-style: italic; display: block; padding: 10px; }
 .meta-data .post-date, .meta-data .post-category, .meta-data .post-comments { padding: 0 10px 0 0; }
 
 .entry .aligncenter { display: block; margin: 0 auto 10px; }
@@ -484,18 +493,8 @@ select::-ms-expand { display: none; }
 
 /* Widget Areas
 #################################################################################################### */
-.sidebar li { margin-bottom: 10px; }
-.sidebar li li { margin: 0; }
-
 /* Blocks
 #################################################################################################### */
-#header #primary-navigation li { display: inline-block; }
-#header #primary-navigation a { display: inline-block; padding: 0 20px; margin: 0; -webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -o-transition: all 0.1s ease-in; transition: all 0.1s ease-in; }
-
-#footer .inner-wrap { text-align: center; padding: 10px; }
-#footer #footer-navigation li { display: inline-block; }
-#footer #footer-navigation a { display: inline-block; padding: 0 10px; margin: 0; }
-
 /* Comments */
 /* 
 File Name comments.css
