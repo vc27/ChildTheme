@@ -3,10 +3,15 @@ ToDo
 
 - update Admin Customizations to create user restrictions with out needing the "Members" plugin.
 - update settings classes to utilize wrapper functions
-- update the theme files to utilize "static" construction approach. Building it statically first then adding php where needed.
 
 ChangeLog
 ====================
+
+### 02.21.15 - 5.0.0
+- update theme options to pull from parent theme
+- update theme templates header footer
+- remove tpl-home.php
+- add ACFWP addon as default
 
 ### 02.21.15 - 4.4.0
 - update css fundumentals

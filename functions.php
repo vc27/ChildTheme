@@ -158,6 +158,8 @@ class ChildTheme {
 		
 		$this->register_style_and_scripts();
 		
+		add_theme_support( 'acf-theme-options' );
+		
 		add_action( 'template_redirect', array( &$this, 'layout_options' ) );
 		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
 		add_filter( 'parenttheme-localize_script', array( &$this, 'filter_localize_script' ) );
@@ -222,10 +224,10 @@ class ChildTheme {
 	function layout_options() {
 		
 		// Archive Post Navigation
-		add_action( 'after_loop', 'previous_next___posts_link' );
+		add_action( 'after-loop', 'previous_next___posts_link' );
 		
 		// Single Post Navigation
-		add_action( 'after_loop', 'previous_next___post_link' );
+		add_action( 'after-loop', 'previous_next___post_link' );
 		
 		// Add Page Title
 		add_action( 'section-main-top', 'archive__title' );

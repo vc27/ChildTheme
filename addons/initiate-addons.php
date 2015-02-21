@@ -14,6 +14,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	
 	// Added Functionality
 	require_once( "ACFThemeOptionsWP.php" );
+	require_once( "ACFWP.php" );
 	require_once( "AdminCustomizationsWP.php" );
 	require_once( "WPSEOEdits.php" );
 	
