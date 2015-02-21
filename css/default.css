@@ -11,6 +11,8 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 /* Block */
 /*Gray*/
 /*Red*/
+/* custom mixins
+#################################################################################################### */
 /* Reset */
 /* 
 File Name: reset.css
@@ -104,6 +106,39 @@ svg:not(:root) { overflow: hidden; }
 .fade.in { opacity: 1 !important; pointer-events: auto !important; }
 
 .fade.out { opacity: 0; pointer-events: none; }
+
+/* Entry
+#################################################################################################### */
+.entry { /* Gallery Shortcode */ }
+.entry .aligncenter { display: block; margin: 0 auto 10px; }
+.entry .alignnone { clear: both; float: none; }
+.entry .alignleft { margin-right: 10px; margin-bottom: 3px; }
+.entry .alignright { margin-left: 10px; margin-bottom: 3px; }
+.entry img { max-width: 100% !important; height: auto !important; }
+.entry img.wp-smiley { border: none; margin: 0; padding: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+.entry p { padding-bottom: 20px; }
+.entry blockquote p { padding: 0; margin: 10px 30px 15px 15px; }
+.entry ol, .entry ul { margin: 10px 0 20px 20px; }
+.entry ul { list-style: disc; }
+.entry ol { list-style: decimal; }
+.entry li { padding-bottom: 7px; }
+.entry small { font-size: 11px; }
+.entry table { line-height: 18px; }
+.entry table td { padding-right: 7px; vertical-align: top; }
+.entry .gallery dl.gallery-item { display: block; float: left; }
+.entry .wp-caption { max-width: 96%; display: block; text-align: center !important; padding: 5px; background: #eee; }
+.entry .wp-caption p { font-size: 11px; line-height: 14px; padding: 5px 0 7px; }
+.entry .wp-caption img { display: inline; }
+
+/*end .entry */
+/* Navigation */
+.navigation-post { display: block; clear: both; text-align: left; padding: 5px; }
+.navigation-post .prev-post { padding-left: 5px; }
+.navigation-post .next-post { padding-right: 5px; }
+
+.wp-pagenavi a, .wp-pagenavi span { padding: 3px 4px; margin: 3px; }
+
+.navigation-posts { display: block; clear: both; text-align: center; }
 
 /*!
  * Bootstrap Responsive v2.3.1
@@ -358,7 +393,7 @@ svg:not(:root) { overflow: hidden; }
   .nav-collapse .nav > .divider-vertical { display: none; }
   .nav-collapse .nav .nav-header { color: #777777; text-shadow: none; }
   .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a { padding: 9px 15px; font-weight: bold; color: #777777; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
-  .nav-collapse .btn { padding: 4px 10px 4px; font-weight: normal; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+  .nav-collapse .btn, .nav-collapse input[type="submit"], .nav-collapse input[type="button"], .nav-collapse button { padding: 4px 10px 4px; font-weight: normal; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
   .nav-collapse .dropdown-menu li + li a { margin-bottom: 2px; }
   .nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus, .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus { background-color: #f2f2f2; }
   .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a { color: #999999; }
@@ -410,8 +445,10 @@ body { line-height: 26px; font-family: sans-serif; }
 
 .h1.slim, .h2.slim, .h3.slim, .h4.slim, .h5.slim, .h6.slim { font-weight: 300; }
 
-/* custom mixins
+/* Buttons
 #################################################################################################### */
+.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; font-family: sans-serif; font-size: 15px; line-height: 26px; }
+
 /* Forms
 #################################################################################################### */
 textarea, input[type="text"], input[type="password"], input[type="email"] { font-family: sans-serif; font-size: 15px; line-height: 26px; width: 95%; padding: 6px 2%; border: none; background: #fafafa; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; border-radius: 4px; }
@@ -430,71 +467,13 @@ select, input, textarea {
 select::-ms-expand { display: none;
 }
 */
-/* Buttons
+/* Blocks
 #################################################################################################### */
-.btn, input[type="submit"], input[type="button"], button { cursor: pointer; display: inline-block; padding: 6px 20px; background: #fafafa; border: none; font-family: sans-serif; font-size: 15px; line-height: 26px; }
-
-/* General Links
-#################################################################################################### */
-/* Navigation */
-.navigation-post { display: block; clear: both; text-align: left; padding: 2.5px 5px; }
-.navigation-post .prev-post { padding-left: 5px; }
-.navigation-post .next-post { padding-right: 5px; }
-
-.wp-pagenavi a, .wp-pagenavi span { padding: 3px 4px; margin: 3px; }
-
-#navigation-breadcrumb { font-weight: bold; padding-bottom: 3px; display: block; clear: both; }
-
-.navigation-posts { font-weight: bold; padding-bottom: 3px; display: block; clear: both; text-align: center; }
-
-/* Post, Page & General Loops
-#################################################################################################### */
-/* Meta Data */
-.meta-data { color: #adadad; font-style: italic; display: block; padding: 10px; }
-.meta-data .post-date, .meta-data .post-category, .meta-data .post-comments { padding: 0 10px 0 0; }
-
-.entry .aligncenter { display: block; margin: 0 auto 10px; }
-.entry .alignnone { clear: both; float: none; }
-.entry .alignleft { margin-right: 10px; margin-bottom: 3px; }
-.entry .alignright { margin-left: 10px; margin-bottom: 3px; }
-.entry img { max-width: 100% !important; height: auto !important; }
-.entry img.wp-smiley { border: none; margin: 0; padding: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-.entry p { padding-bottom: 20px; }
-.entry blockquote p { padding: 0; margin: 10px 30px 15px 15px; }
-.entry ol, .entry ul { margin: 10px 0 20px 20px; }
-.entry ul { list-style: disc; }
-.entry ol { list-style: decimal; }
-.entry li { padding-bottom: 7px; }
-.entry small { font-size: 11px; }
-.entry table { line-height: 18px; }
-.entry table td { padding-right: 7px; vertical-align: top; }
-
-/*end .entry */
-.excerpt p { padding-bottom: 20px; }
-
-/* Gallery Shortcode */
-.gallery dl.gallery-item { display: block; float: left; }
-
-.wp-caption { max-width: 96%; display: block; text-align: center !important; padding: 5px; background: #eee; }
-.wp-caption p { font-size: 11px; line-height: 14px; padding: 5px 0 7px; }
-.wp-caption img { display: inline; }
-
-/* All sitemap style layouts - search, 404, sitemap */
-.layout-sitemap .display-list { margin: 0 2% 20px 0; width: 48%; float: left; }
-.layout-sitemap .display-list ul { margin: 10px 0 0 0; }
-.layout-sitemap .display-list ul ul { margin: 0 0 7px 15px; list-style: disc; }
-.layout-sitemap .display-list ul ul.children { padding: 0; margin-left: 15px; list-style: disc; }
-.layout-sitemap .display-list .site-search { display: block; padding-bottom: 10px; }
-
 #section-loop-default .hentry { padding: 30px 0 20px 0; }
 #section-loop-default .hentry:first-child { padding: 0 0 20px 0; }
 #section-loop-default .entry { clear: both; }
 #section-loop-default .excerpt { clear: none; padding: 0; }
 
-/* Widget Areas
-#################################################################################################### */
-/* Blocks
-#################################################################################################### */
 /* Comments */
 /* 
 File Name comments.css

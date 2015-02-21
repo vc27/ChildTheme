@@ -8,6 +8,9 @@ ToDo
 ChangeLog
 ====================
 
+### 02.21.15 - 4.4.0
+- update css fundumentals
+
 ### 01.29.15 - 4.3.0
 - add angular as default
 - add template files for modal and loader

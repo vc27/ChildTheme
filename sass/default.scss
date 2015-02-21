@@ -43,6 +43,18 @@ $gray-c: #a3a3a3;
 $red-a: #f5cdca;
 $red-b: #dd5951;
 
+
+
+/* custom mixins
+#################################################################################################### */
+@mixin remove-section-main-inner-wrap() {
+	.inner-wrap.section-main-inner-wrap { max-width:100000px; padding:0; }
+	#section-main { padding-top:0; }
+}
+
+
+
+
 /* Reset */
 @import 'reset';
 @import 'bootstrap-responsive';
@@ -78,11 +90,11 @@ body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; }
 
 
 
-/* custom mixins
+/* Buttons
 #################################################################################################### */
-@mixin remove-section-main-inner-wrap() {
-	.inner-wrap.section-main-inner-wrap { max-width:100000px; padding:0; }
-	#section-main { padding-top:0; }
+.btn {
+	cursor:pointer; display:inline-block; padding:6px 20px; background:$gray-a; border:none;
+	@include paragraph();
 }
 
 
@@ -104,6 +116,10 @@ input[type="email"] {
 textarea { height:100px; }
 label.error { color:$red-a; }
 label { cursor:pointer; }
+
+input[type="submit"], input[type="button"], button {
+	@extend .btn;
+}
 
 /* remove webkit css
 select, input, textarea { 
@@ -132,117 +148,8 @@ input[type="email"]:hover,input[type="email"]:focus {
 
 
 
-/* Buttons
+/* Blocks
 #################################################################################################### */
-.btn, 
-input[type="submit"],input[type="button"], button {
-	cursor:pointer; display:inline-block; padding:6px 20px; background:$gray-a; border:none;
-	@include paragraph();
-}
-
-.btn:hover,
-input[type="submit"]:hover,input[type="button"]:hover, button:hover {
-	
-}
-
-
-
-
-
-
-/* General Links
-#################################################################################################### */
-
-
-/* Navigation */
-.navigation-post {
-	display:block; clear:both; text-align:left; padding:2.5px 5px;
-	.prev-post { padding-left:5px; }
-	.next-post { padding-right:5px; }
-}
-
-.wp-pagenavi {
-	a, span { padding:3px 4px; margin:3px; }
-}
-
-#navigation-breadcrumb { font-weight:bold; padding-bottom:3px; display:block; clear:both; }
-.navigation-posts { font-weight:bold; padding-bottom:3px; display:block; clear:both; text-align:center; }
-
-
-
-
-
-
-/* Post, Page & General Loops
-#################################################################################################### */
-
-
-/* Meta Data */
-.meta-data { 
-	color:$gray-b; font-style:italic;
-	display:block; padding:10px; 
-	.post-date, .post-category, .post-comments {
-		padding:0 10px 0 0;
-	}
-}
-.read-more-dots {}
-.read-more {}
-
-.entry {
-	.aligncenter { display:block; margin:0 auto 10px; }
-	.alignnone { clear:both; float:none; }
-	.alignleft { margin-right:10px; margin-bottom:3px; }
-	.alignright { margin-left:10px; margin-bottom:3px; }
-	img { max-width:100% !important; height:auto !important; }
-	img.wp-smiley { border:none; margin:0; padding:0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-    p { padding-bottom:20px; }
-    blockquote {
-		p { padding:0; margin:10px 30px 15px 15px; }
-	}
-	ol, ul { margin:10px 0 20px 20px; }
-	ul { list-style:disc; }
-	ol { list-style:decimal; }
-	li { padding-bottom:7px; }
-	strong {}
-	small { font-size:11px; }
-	table {
-		line-height:18px;
-		td { padding-right:7px; vertical-align:top; }
-	}
-} /*end .entry */
-
-.excerpt p { padding-bottom:20px; }
-
-
-
-/* Gallery Shortcode */
-.gallery {
-	dl.gallery-item { display:block; float:left; }
-
-	dl dt.gallery-icon {}
-	img {}
-	.gallery-caption {}
-}
-
-.wp-caption {
-	max-width:96%; display:block; text-align:center !important; padding:5px; background:#eee;
-	p { font-size:11px; line-height:14px; padding:5px 0 7px; }
-	img { display:inline; }
-	.wp-caption-text {}
-}
-
-
-
-/* All sitemap style layouts - search, 404, sitemap */
-.layout-sitemap .display-list {
-	margin:0 2% 20px 0; width:48%; float:left;
-
-	ul { margin:10px 0 0 0; }
-	ul ul { margin:0 0 7px 15px; list-style:disc; }
-	ul ul.children { padding:0; margin-left:15px; list-style:disc; }
-
-	.site-search { display:block; padding-bottom:10px; }
-}
 
 
 
@@ -252,25 +159,6 @@ input[type="submit"]:hover,input[type="button"]:hover, button:hover {
 	.entry { clear:both; }
 	.excerpt { clear:none; padding:0; }
 }
-
-
-
-
-
-
-/* Widget Areas
-#################################################################################################### */
-.sidebar {
-	.widget-box {}
-}
-
-
-
-
-
-
-/* Blocks
-#################################################################################################### */
 
 
 
