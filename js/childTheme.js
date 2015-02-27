@@ -9,32 +9,30 @@
  * childTheme
  **/
 var childTheme = {
-	
-	
+
+
 	/**
 	 * init
 	 **/
 	init : function() {
-		
-		this.mbpScaleFix();
-		
+
+		this.functionName();
+
 	} // end init : function
-	
-	
-	
+
+
+
 	/**
-	 * mbpScaleFix
+	 * functionName
 	 **/
-	,mbpScaleFix : function() {
-		
-		if ( typeof MBP !== 'undefined' ) {
-			MBP.scaleFix();
-		}
-		
-	} // end mbpScaleFix : function
-	
-	
-	
+	,functionName : function() {
+
+
+
+	} // end functionName : function
+
+
+
 }; // end var childTheme
 
 
@@ -45,6 +43,4 @@ var childTheme = {
 /**
  * jQuery
  **/
-jQuery(document).ready(function() {
-	childTheme.init();	
-});
+// jQuery(document).ready(function() { childTheme.init(); });

@@ -1,11 +1,10 @@
-ToDo
-====================
-
-- update Admin Customizations to create user restrictions with out needing the "Members" plugin.
-- update settings classes to utilize wrapper functions
-
 ChangeLog
 ====================
+
+### 02.27.15 - 5.1.0
+- update childTheme.js to remove un-needed items
+- update mixin.scss with align
+- update AdminCustomizationsWP with less constrictions
 
 ### 02.21.15 - 5.0.0
 - update theme options to pull from parent theme
@@ -136,4 +135,3 @@ Pre Markedown
 
 12.22.12
 - post-types/ - updated class layout, restructured post_type_tax_filters
-

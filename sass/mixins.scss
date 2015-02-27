@@ -1,4 +1,4 @@
-/* 
+/*
 File Name mixins.css
 Package ParentTheme
 License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -15,8 +15,8 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 @mixin transitionAll($time:0.1s) { -webkit-transition:all $time ease-in; -moz-transition:all $time ease-in; -o-transition:all $time ease-in; transition:all $time ease-in; }
 @mixin translateY($translateY) { -webkit-transform: translateY($translateY); -moz-transform: translateY($translateY); -o-transform: translateY($translateY); -ms-transform: translateY($translateY); transform: translateY($translateY); }
 @mixin translateX($translateX) { -webkit-transform: translateX($translateX); -moz-transform: translateX($translateX); -o-transform: translateX($translateX); -ms-transform: translateX($translateX); transform: translateX($translateX); }
-@mixin background-cover() { background-position:center center; background-repeat:no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
-@mixin featured-image() { display:block; min-height:100px; @include background-cover(); }
+@mixin background-cover($align:center) { background-position:center $align; background-repeat:no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+@mixin featured-image($align:center) { display:block; min-height:100px; @include background-cover($align); }
 @mixin box-sizing() { box-sizing:content-box; -ms-box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; }
 @mixin inline-block($align:middle) { display:inline-block; vertical-align:$align; }
 @mixin image-auto-width() { max-width:100%; height:auto; }

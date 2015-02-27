@@ -550,32 +550,30 @@
  * childTheme
  **/
 var childTheme = {
-	
-	
+
+
 	/**
 	 * init
 	 **/
 	init : function() {
-		
-		this.mbpScaleFix();
-		
+
+		this.functionName();
+
 	} // end init : function
-	
-	
-	
+
+
+
 	/**
-	 * mbpScaleFix
+	 * functionName
 	 **/
-	,mbpScaleFix : function() {
-		
-		if ( typeof MBP !== 'undefined' ) {
-			MBP.scaleFix();
-		}
-		
-	} // end mbpScaleFix : function
-	
-	
-	
+	,functionName : function() {
+
+
+
+	} // end functionName : function
+
+
+
 }; // end var childTheme
 
 
@@ -586,9 +584,8 @@ var childTheme = {
 /**
  * jQuery
  **/
-jQuery(document).ready(function() {
-	childTheme.init();	
-});
+// jQuery(document).ready(function() { childTheme.init(); });
+
 
 /**
  * File Name ngApp.js
@@ -605,20 +602,20 @@ var ngApp = angular.module('ngApp', []);
 ngApp.controller( 'ngAppCtrl', [
 	'$scope'
 	,'$sce'
-	,function( 
+	,function(
 		$scope
 		,$sce
 	) {
-	
-	
+
+
 	// $scope
 	// ########################################
 	$scope.text = 'yeah';
 	$scope.l = siteObject; // l = local
 	$scope.hash = '';
-	
-	
-	
+
+
+
 	// General use
 	// ########################################
 	$scope.permalink = function(url) {
@@ -628,16 +625,16 @@ ngApp.controller( 'ngAppCtrl', [
 		if ( window.location.hash ) {
 			$scope.hash = window.location.hash.replace("#", "");
 		}
-	}; $scope.setHash();
+	};
 	$scope.trustHtml = function(html) {
 		return $sce.trustAsHtml(html);
 	};
 	$scope.print = function() {
 		window.print();
 	}
-	
-	
-	
+
+
+
 	// Errors
 	// ########################################
 	$scope.e = {
@@ -646,9 +643,9 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.e.current.push(id);
 		}
 	};
-	
-	
-	
+
+
+
 	// Share
 	// ########################################
 	$scope.share = {
@@ -662,9 +659,9 @@ ngApp.controller( 'ngAppCtrl', [
 			shareUrl.shareOnGooglePlus()
 		}
 	};
-	
-	
-	
+
+
+
 	// Modal
 	// ########################################
 	$scope.modal = {
@@ -731,9 +728,9 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.modal.show();
 		}
 	};
-	
-	
-	
+
+
+
 	// Loader -- Functions
 	// ########################################
 	$scope.loader = {
@@ -784,20 +781,22 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.loader.start();
 		}
 	};
-	
-	
-	
+
+
+
 	// Initiate
 	// ########################################
-	// $scope.init = function() {};
-	
-	
-	
+	$scope.init = function() {
+		// $scope.setHash();
+	};
+
+
+
 	// Init -- Functions
 	// ########################################
 	jQuery(document).ready(function() {
 		// $scope.init();
-		
+
 		/*
 		jQuery(window).keydown(function (event){
 			// control+l
@@ -817,6 +816,7 @@ ngApp.controller( 'ngAppCtrl', [
 
 
 }]);
+
 
 /**
  * File Name siteScripts.js

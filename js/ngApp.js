@@ -13,20 +13,20 @@ var ngApp = angular.module('ngApp', []);
 ngApp.controller( 'ngAppCtrl', [
 	'$scope'
 	,'$sce'
-	,function( 
+	,function(
 		$scope
 		,$sce
 	) {
-	
-	
+
+
 	// $scope
 	// ########################################
 	$scope.text = 'yeah';
 	$scope.l = siteObject; // l = local
 	$scope.hash = '';
-	
-	
-	
+
+
+
 	// General use
 	// ########################################
 	$scope.permalink = function(url) {
@@ -36,16 +36,16 @@ ngApp.controller( 'ngAppCtrl', [
 		if ( window.location.hash ) {
 			$scope.hash = window.location.hash.replace("#", "");
 		}
-	}; $scope.setHash();
+	};
 	$scope.trustHtml = function(html) {
 		return $sce.trustAsHtml(html);
 	};
 	$scope.print = function() {
 		window.print();
 	}
-	
-	
-	
+
+
+
 	// Errors
 	// ########################################
 	$scope.e = {
@@ -54,9 +54,9 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.e.current.push(id);
 		}
 	};
-	
-	
-	
+
+
+
 	// Share
 	// ########################################
 	$scope.share = {
@@ -70,9 +70,9 @@ ngApp.controller( 'ngAppCtrl', [
 			shareUrl.shareOnGooglePlus()
 		}
 	};
-	
-	
-	
+
+
+
 	// Modal
 	// ########################################
 	$scope.modal = {
@@ -139,9 +139,9 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.modal.show();
 		}
 	};
-	
-	
-	
+
+
+
 	// Loader -- Functions
 	// ########################################
 	$scope.loader = {
@@ -192,20 +192,22 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.loader.start();
 		}
 	};
-	
-	
-	
+
+
+
 	// Initiate
 	// ########################################
-	// $scope.init = function() {};
-	
-	
-	
+	$scope.init = function() {
+		// $scope.setHash();
+	};
+
+
+
 	// Init -- Functions
 	// ########################################
 	jQuery(document).ready(function() {
 		// $scope.init();
-		
+
 		/*
 		jQuery(window).keydown(function (event){
 			// control+l
