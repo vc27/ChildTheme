@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 05.28.15 - 5.2.0
+- cleanup prep
+
 ### 02.27.15 - 5.1.0
 - update childTheme.js to remove un-needed items
 - update mixin.scss with align
