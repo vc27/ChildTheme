@@ -78,7 +78,6 @@ class AdminCustomizationsWP {
 
 		if ( is_admin() ) {
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
-			add_action( 'admin_menu', array( &$this, 'remove_mene_page' ), 99 );
 			add_action( 'admin_menu', array( &$this, 'remove_submenus' ), 199 );
 
 			// add_filter("manage_edit-page_columns", array( &$this, "edit_columns" ) );
@@ -205,9 +204,11 @@ class AdminCustomizationsWP {
 		if ( file_exists( get_stylesheet_directory() . "/css/admin-login.css" ) ) {
 			wp_enqueue_style( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/css/admin-login.css", array(), null );
 		}
+		/*
 		if ( $this->show_adminLogin AND file_exists( get_stylesheet_directory() . "/js/min/adminLogin-min.js" ) ) {
 			wp_enqueue_script( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/min/adminLogin-min", array('jquery'), null );
 		}
+		*/
 
 	} // end function login_enqueue_scripts
 
@@ -236,49 +237,25 @@ class AdminCustomizationsWP {
 
 
 	/**
-	 * remove_mene_page
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-    function remove_mene_page() {
-
-		if ( ! is__user('randy') ) {
-			remove_menu_page( 'edit.php?post_type=acf' );
-			remove_menu_page( 'edit.php?post_type=acf-field-group' );
-		}
-
-    } // end function remove_mene_page
-
-
-
-
-
-
-	/**
 	 * remove_submenus
 	 *
 	 * @version 1.0
 	 * @updated 00.00.00
 	 **/
 	function remove_submenus() {
-		global $submenu;
 
-		if ( ! current_user_can( $this->role__restrict_management ) AND isset( $_GET['showMenuWP'] ) ) {
-			print_r($submenu);
-		}
-
-		unset($submenu['plugins.php'][15]); // Plugin Editor
-		unset($submenu['tools.php'][5]); // Tools area
+		remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+		remove_submenu_page( 'tools.php', 'tools.php' );
+		remove_submenu_page( 'themes.php', 'theme-editor.php' );
 
 		if ( current_user_can($this->role__restrict_management) ) {
 
-			unset($submenu['themes.php'][5]); // remove Themes
-			unset($submenu['themes.php'][6]); // remove customize
+			remove_submenu_page( 'themes.php', 'themes.php' );
+			remove_submenu_page( 'themes.php', 'customize.php?return=%2Fwp-admin%2Fthemes.php' );
 
 		}
 
-		// print_r($submenu);
+		// global $submenu; print_r($submenu);
 
 	} // end function remove_submenus
 

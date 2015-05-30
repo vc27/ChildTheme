@@ -1,6 +1,13 @@
 ChangeLog
 ====================
 
+### 05.30.15 - 5.3.0
+- update wpseo edits with clean approach for submenus
+- update admin customization
+- update acfthemeoptions
+- swap html5shiv for modernizr
+- update modal in ngApp.js
+
 ### 05.28.15 - 5.2.0
 - cleanup prep
 

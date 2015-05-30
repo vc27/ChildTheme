@@ -80,6 +80,10 @@ ngApp.controller( 'ngAppCtrl', [
 		,cssClass : 'modal-default'
 		,title : 0
 		,html : 0
+		,tpl : null
+		,isRawHtml : 0
+		,formKey : 0
+		,scrollTo : 0
 		,displayHtml : function() {
 			if ( $scope.modal.html != 0 && $scope.modal.tpl == null ) {
 				return true;
@@ -99,11 +103,18 @@ ngApp.controller( 'ngAppCtrl', [
 			});
 		}
 		,hide : function() {
+			if ( $scope.modal.scrollTo != 0 ) {
+				scrollingJs.scrollTo($scope.modal.scrollTo, 0, 1);
+			}
+
 			$scope.modal.html = 0;
 			$scope.modal.title = 0;
 			$scope.modal.cssClass = 'modal-default';
 			$scope.modal.isShow = 0;
+			$scope.modal.isRawHtml = 0;
+			$scope.modal.formKey = 0;
 			$scope.modal.tpl = null;
+			$scope.modal.scrollTo = 0;
 			jQuery('body').css({
 				'overflow' : 'visible'
 			});

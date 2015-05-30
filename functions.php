@@ -7,16 +7,6 @@
 #################################################################################################### */
 
 
-/**
- * ThemeCompatibility
- *
- * @access public
- * @var int
- * @since 4.0.0
- **/
-$ThemeCompatibility = 7;
-
-
 
 /**
  * Initiate Addons
@@ -34,7 +24,7 @@ require_once( "addons/initiate-addons.php" );
  * @since 4.0.0
  **/
 $ChildTheme = new ChildTheme();
-$ChildTheme->set( 'ThemeCompatibility', $ThemeCompatibility );
+$ChildTheme->set( 'ThemeCompatibility', 7 );
 $ChildTheme->initChildTheme();
 class ChildTheme {
 
@@ -249,6 +239,8 @@ class ChildTheme {
 
 		// Styles
 		wp_enqueue_style( 'childtheme-default' );
+
+		// IE
 		if ( $is_IE OR $this->is_IE ) {
 			wp_enqueue_style( 'IE8' );
 			wp_enqueue_style( 'IE9' );
@@ -258,7 +250,7 @@ class ChildTheme {
 			}
 		}
 
-		// Scripts
+		// JS Scripts
 		wp_enqueue_script( 'angular' );
 		wp_enqueue_script( 'siteScripts' );
 
