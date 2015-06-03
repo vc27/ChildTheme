@@ -1,6 +1,9 @@
 ChangeLog
 ====================
 
+### 06.03.15 - 5.4.0
+- update readme file with basic info
+
 ### 05.30.15 - 5.3.0
 - update wpseo edits with clean approach for submenus
 - update admin customization
