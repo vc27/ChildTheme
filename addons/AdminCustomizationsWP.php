@@ -201,7 +201,10 @@ class AdminCustomizationsWP {
 	 **/
 	function login_enqueue_scripts() {
 
-		if ( file_exists( get_stylesheet_directory() . "/css/admin-login.css" ) ) {
+		if (
+			file_exists( get_stylesheet_directory() . "/css/admin-login.css" )
+			AND file_exists( get_stylesheet_directory() . "/images/login-logo.png" ) 
+		) {
 			wp_enqueue_style( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/css/admin-login.css", array(), null );
 		}
 		/*

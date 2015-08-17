@@ -1,6 +1,12 @@
 ChangeLog
 ====================
 
+### 08.17.15 - randy-c-5.5.1
+- break out scss into sections and layout
+- updae scss mixin
+- update addon admin customization to re-include login-logo
+- add blank -login-logo.png - remove preceding "-" to use
+
 ### 08.17.15 - randy-c-5.5.0
 - re-add change-log
 - re-add db-update.sql
