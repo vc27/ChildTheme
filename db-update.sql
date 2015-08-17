@@ -1,4 +1,4 @@
-### live to local
+### local to stage
 UPDATE wp_posts SET post_content = replace( post_content, 'olddomain.com', 'newdomain.com' );
 UPDATE wp_posts SET guid = replace( guid, 'olddomain.com', 'newdomain.com' );
 

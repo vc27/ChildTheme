@@ -1,6 +1,10 @@
 ChangeLog
 ====================
 
+### 08.17.15 - randy-c-5.5.0
+- re-add change-log
+- re-add db-update.sql
+
 ### 06.03.15 - 5.4.0
 - update readme file with basic info
 
