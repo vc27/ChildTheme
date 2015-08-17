@@ -183,7 +183,10 @@ class ACFThemeOptionsWP {
 	 **/
     function remove_mene_page() {
 
-		if ( ! is__user('randy') ) {
+		if (
+			! is__user('randy')
+			AND ! is__user('metacake')
+		) {
 			remove_menu_page( 'edit.php?post_type=acf' );
 			remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		}
@@ -207,22 +210,19 @@ class ACFThemeOptionsWP {
 
 
 	/**
-	 * have_something
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
+	 * haveErrors
 	 **/
-	function have_something() {
+	function haveErrors() {
 
-		if ( isset( $this->something ) AND ! empty( $this->something ) ) {
-			$this->set( 'have_something', 1 );
+		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
+			$this->set( 'haveErrors', 1 );
 		} else {
-			$this->set( 'have_something', 0 );
+			$this->set( 'haveErrors', 0 );
 		}
 
-		return $this->have_something;
+		return $this->haveErrors;
 
-	} // end function have_something
+	} // end function haveErrors
 
 
 

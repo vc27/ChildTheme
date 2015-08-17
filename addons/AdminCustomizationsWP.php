@@ -34,26 +34,6 @@ class AdminCustomizationsWP {
 
 
 	/**
-	 * show_adminLogin
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $show_adminLogin = 0;
-
-
-
-	/**
-	 * included_post_types
-	 *
-	 * @access public
-	 * @var array
-	 **/
-	var $included_post_types = array( 'post', 'page' );
-
-
-
-	/**
 	 * errors
 	 *
 	 * @access public
@@ -79,11 +59,6 @@ class AdminCustomizationsWP {
 		if ( is_admin() ) {
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
 			add_action( 'admin_menu', array( &$this, 'remove_submenus' ), 199 );
-
-			// add_filter("manage_edit-page_columns", array( &$this, "edit_columns" ) );
-			// add_filter("manage_edit-post_columns", array( &$this, "edit_columns" ) );
-			// add_action("manage_pages_custom_column", array( &$this, "custom_columns" ) );
-			// add_action("manage_posts_custom_column", array( &$this, "custom_columns" ) );
 		}
 
 	} // end function __construct
@@ -203,7 +178,7 @@ class AdminCustomizationsWP {
 
 		if (
 			file_exists( get_stylesheet_directory() . "/css/admin-login.css" )
-			AND file_exists( get_stylesheet_directory() . "/images/login-logo.png" ) 
+			AND file_exists( get_stylesheet_directory() . "/images/login-logo.png" )
 		) {
 			wp_enqueue_style( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/css/admin-login.css", array(), null );
 		}
@@ -267,53 +242,6 @@ class AdminCustomizationsWP {
 
 
 
-	/**
-	 * Add Featured Image to the Post and Page section of the WP admin edit
-	 *
-	 * @version 1.0
-	 * @updated 00.00.13
-	 **/
-	function edit_columns( $columns ) {
-
-		$columns['pt-image'] = 'Image';
-
-		return $columns;
-
-	} // end function edit_columns
-
-
-
-
-
-	/**
-	 * Add Custom Columns to Post & Page
-	 *
-	 * @version 1.0
-	 * @updated 00.00.13
-	 **/
-	function custom_columns( $column ) {
-		global $post;
-
-		if ( in_array( $post->post_type, $this->included_post_types ) ) {
-
-			switch ( $column ) {
-
-				case "pt-image":
-					if ( has_post_thumbnail( $post->ID ) )
-						echo get_the_post_thumbnail( $post->ID, array( 50, 50 ) );
-					break;
-
-			} // end switch
-
-		} // endif
-
-	} // end function custom_columns
-
-
-
-
-
-
 	####################################################################################################
 	/**
 	 * Conditionals
@@ -326,22 +254,19 @@ class AdminCustomizationsWP {
 
 
 	/**
-	 * have_something
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
+	 * haveErrors
 	 **/
-	function have_something() {
+	function haveErrors() {
 
-		if ( isset( $this->something ) AND ! empty( $this->something ) ) {
-			$this->set( 'have_something', 1 );
+		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
+			$this->set( 'haveErrors', 1 );
 		} else {
-			$this->set( 'have_something', 0 );
+			$this->set( 'haveErrors', 0 );
 		}
 
-		return $this->have_something;
+		return $this->haveErrors;
 
-	} // end function have_something
+	} // end function haveErrors
 
 
 

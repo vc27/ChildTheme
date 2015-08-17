@@ -1,6 +1,11 @@
 ChangeLog
 ====================
 
+### 08.17.15 - randy-c-5.5.2
+- update ACFWP
+- remove methods from ACF admin
+- add metacake to hidden ACF admin
+
 ### 08.17.15 - randy-c-5.5.1
 - break out scss into sections and layout
 - updae scss mixin
