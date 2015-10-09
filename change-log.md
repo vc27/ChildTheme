@@ -10,6 +10,10 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 10.09.15 - randy-c-5.6.1
+- final commit to master
+- update theme options to remove featured image on page
+
 ### 10.09.15 - randy-c-5.6.0
 - split mixin file in two parts
 - add a few mixins from various projects
