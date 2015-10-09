@@ -1,5 +1,20 @@
+Issues, Notes, Current task
+====================
+
+### Current Task
+
+### Issues
+
+### Notes
+
 ChangeLog
 ====================
+
+### 10.09.15 - randy-c-5.6.0
+- split mixin file in two parts
+- add a few mixins from various projects
+- remove old IE scss files
+- tidy functions.php
 
 ### 08.17.15 - randy-c-5.5.2
 - update ACFWP

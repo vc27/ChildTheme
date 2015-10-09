@@ -75,8 +75,8 @@ class ChildTheme {
 	 **/
 	function initChildTheme() {
 
-		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
-		add_action( 'init', array( &$this, 'init' ) );
+		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
+		add_action( 'init', array( $this, 'init' ) );
 
 	} // end function initChildTheme
 
@@ -112,8 +112,6 @@ class ChildTheme {
 		// load_theme_textdomain( 'childtheme', "$this->stylesheet_directory/languages" );
 		// load_theme_textdomain( 'parenttheme', $this->ParentTheme->template_directory . "/languages" );
 
-		// add_theme_support('video-oembed-post-meta');
-
 		add_image_size( 'standard', 300, 300, false );
 		add_image_size( 'medium', 600, 1000, false );
 		add_image_size( 'large', 1000, 2000, false );
@@ -148,10 +146,10 @@ class ChildTheme {
 
 		add_theme_support( 'acf-theme-options' );
 
-		add_action( 'template_redirect', array( &$this, 'layout_options' ) );
-		add_action( 'wp_enqueue_scripts', array( &$this, 'register_style_and_scripts' ), 9 );
-		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
-		add_filter( 'parenttheme-localize_script', array( &$this, 'filter_localize_script' ) );
+		add_action( 'template_redirect', array( $this, 'layout_options' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_style_and_scripts' ), 9 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
+		add_filter( 'parenttheme-localize_script', array( $this, 'filter_localize_script' ) );
 
 	} // end function init
 
@@ -234,13 +232,14 @@ class ChildTheme {
 	 * @since 4.0.0
 	 **/
 	function wp_enqueue_scripts() {
-		global $is_IE, $wp_styles;
+		global $is_IE;
 
 		// Styles
 		wp_enqueue_style( 'childtheme-default' );
 
 		// IE
 		if ( $is_IE OR $this->is_IE ) {
+			global $wp_styles;
 			wp_enqueue_style( 'IE8' );
 			wp_enqueue_style( 'IE9' );
 			$wp_styles->add_data( 'IE8', 'conditional', 'lt IE 9' );
