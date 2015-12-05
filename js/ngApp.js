@@ -29,20 +29,9 @@ ngApp.controller( 'ngAppCtrl', [
 
 	// General use
 	// ########################################
-	$scope.permalink = function(url) {
-		window.location = url;
-	};
-	$scope.setHash = function() {
-		if ( window.location.hash ) {
-			$scope.hash = window.location.hash.replace("#", "");
-		}
-	};
 	$scope.trustHtml = function(html) {
 		return $sce.trustAsHtml(html);
 	};
-	$scope.print = function() {
-		window.print();
-	}
 
 
 
@@ -52,22 +41,6 @@ ngApp.controller( 'ngAppCtrl', [
 		current : []
 		,set : function(id) {
 			$scope.e.current.push(id);
-		}
-	};
-
-
-
-	// Share
-	// ########################################
-	$scope.share = {
-		fb : function() {
-			shareUrl.shareOnFacebook();
-		}
-		,twitter : function(text) {
-			shareUrl.shareOnTwitter(text);
-		}
-		,googlePlus : function() {
-			shareUrl.shareOnGooglePlus()
 		}
 	};
 
@@ -148,59 +121,6 @@ ngApp.controller( 'ngAppCtrl', [
 			$scope.modal.html = typeof html !== 'undefined' ? html : 0;
 			$scope.modal.title = typeof title !== 'undefined' ? title : 0;
 			$scope.modal.show();
-		}
-	};
-
-
-
-	// Loader -- Functions
-	// ########################################
-	$scope.loader = {
-		isShow : 0
-		,cssClass : 'loader-default'
-		,html : 0
-		,tpl : null
-		,isPaused : 0
-		,pauseDelay : 1000
-		,displayHtml : function() {
-			if ( $scope.loader.html != 0 && $scope.loader.tpl == null ) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-		,start : function() {
-			$scope.loader.isShow = 1;
-			$scope.loader.isPaused = 1;
-			if ( $scope.loader.html ) {
-				$scope.loader.html = $sce.trustAsHtml($scope.loader.html);
-			}
-			jQuery('body').css({
-				'overflow' : 'hidden'
-			});
-			// Use isPaused to put a minimum time on the loader modal to make sure it doesn't "flash".
-			/*setTimeout( function() {
-				$scope.loader.isPaused = 0;
-			}, $scope.loader.pauseDelay );*/
-		}
-		,stop : function() {
-			$scope.loader.isShow = 0;
-			$scope.loader.cssClass = 'loader-default';
-			$scope.loader.html = 0;
-			$scope.loader.tpl = null;
-			jQuery('body').css({
-				'overflow' : 'visible'
-			});
-		}
-		,testHTML : function() {
-			$scope.loader.cssClass = 'modal-test';
-			$scope.loader.html = 'Loading html here...';
-			$scope.loader.start();
-		}
-		,testTpl : function() {
-			$scope.loader.cssClass = 'modal-test';
-			$scope.loader.tpl = '/loader-default.html';
-			$scope.loader.start();
 		}
 	};
 

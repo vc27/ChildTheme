@@ -1,33 +1,36 @@
-/*
-File Name mixins-theme.css
-Package ParentTheme
-License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/* File Name mixins-theme.css
 #################################################################################################### */
 
-$transition: all 0.1s ease-in;
-$radius: 4px;
 $font-paragraph-size: 15px;
 $font-paragraph-line-height: 26px;
 
-@mixin font-one() { // reading font
+@mixin reading-font() { // reading font
     font-family:sans-serif;
 }
-@mixin font-two() { // title font
+@mixin header-font() { // title font
     font-family:serif;
 }
 @mixin paragraph() {
-	@include font-one();
+	@include reading-font();
 	font-size:$font-paragraph-size;
 	line-height:$font-paragraph-line-height;
 }
-@mixin title() {
-	@include font-two();
+@mixin headers() {
+	@include header-font();
 	line-height:1.1em;
 	font-weight:400;
 }
-@mixin med-text() { font-size:18px; }
-@mixin sml-text() { font-size:14px; line-height:18px; }
-@mixin sml-text-ex() { @include sml-text(); font-size:13px; }
+@mixin med-text() {
+    font-size:18px;
+}
+@mixin sml-text() {
+    font-size:14px;
+    line-height:18px;
+}
+@mixin sml-text-ex() {
+    @include sml-text();
+    font-size:13px;
+}
 
 /* Block */
 $max-width-a: 940px;
@@ -49,6 +52,11 @@ $red-b: #dd5951;
 /* custom mixins
 #################################################################################################### */
 @mixin remove-section-main-inner-wrap() {
-	.inner-wrap.section-main-inner-wrap { max-width:100000px; padding:0; }
-	#section-main { padding-top:0; }
+	.inner-wrap.section-main-inner-wrap {
+        max-width:100000px;
+        padding:0;
+    }
+	#section-main {
+        padding-top:0;
+    }
 }

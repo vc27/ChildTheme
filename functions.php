@@ -176,6 +176,7 @@ class ChildTheme {
 	function register_style_and_scripts() {
 		global $is_IE;
 
+		wp_register_style( 'icomoon', "$this->stylesheet_directory_uri/css/icomoon/style.css", array(), null );
 		wp_register_style( 'childtheme-default', "$this->stylesheet_directory_uri/css/default.css", array(), null );
 
 		// wp_register_script( 'angular', "//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js", array('jquery'), null );
@@ -235,6 +236,7 @@ class ChildTheme {
 		global $is_IE;
 
 		// Styles
+		wp_enqueue_style( 'icomoon' );
 		wp_enqueue_style( 'childtheme-default' );
 
 		// IE

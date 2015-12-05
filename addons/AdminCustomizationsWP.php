@@ -24,16 +24,6 @@ class AdminCustomizationsWP {
 
 
 	/**
-	 * role__restrict_management
-	 *
-	 * @access public
-	 * @var string
-	 **/
-	var $role__restrict_management = 'restrict_mgmt';
-
-
-
-	/**
 	 * errors
 	 *
 	 * @access public
@@ -58,6 +48,7 @@ class AdminCustomizationsWP {
 
 		if ( is_admin() ) {
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
+			// add_action( 'admin_menu', array( &$this, 'remove_mene_page' ), 99 );
 			add_action( 'admin_menu', array( &$this, 'remove_submenus' ), 199 );
 		}
 
@@ -221,15 +212,18 @@ class AdminCustomizationsWP {
 	 * @updated 00.00.00
 	 **/
 	function remove_submenus() {
+		// global $submenu; print_r($submenu);
 
 		remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
 		remove_submenu_page( 'tools.php', 'tools.php' );
 		remove_submenu_page( 'themes.php', 'theme-editor.php' );
+		remove_submenu_page( 'themes.php', 'customize.php?return=%2Fwp-admin%2Foptions-general.php' );
 
-		if ( current_user_can($this->role__restrict_management) ) {
+		if ( ! current_user_can('administrator') ) {
 
-			remove_submenu_page( 'themes.php', 'themes.php' );
-			remove_submenu_page( 'themes.php', 'customize.php?return=%2Fwp-admin%2Fthemes.php' );
+			remove_submenu_page( 'options-general.php', 'members-settings' );
+			remove_submenu_page( 'options-general.php', 'duplicatepost' );
+			remove_submenu_page( 'users.php', 'roles' );
 
 		}
 

@@ -1,7 +1,4 @@
-/*
-File Name default.css
-Package ParentTheme
-License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/* File Name default.css 
 #################################################################################################### */
 
 
@@ -48,15 +45,27 @@ body {
 }
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
 	display:block;
-	@include title();
+	@include headers();
 }
 
-.h1, h1 { font-size:46px; }
-.h2, h2 { font-size:40px; }
-.h3, h3 { font-size:36px; }
-.h4, h4 { font-size:30px; }
-.h5, h5 { font-size:26px; }
-.h6, h6 { font-size:20px; }
+.h1, h1 {
+	font-size:46px;
+}
+.h2, h2 {
+	font-size:40px;
+}
+.h3, h3 {
+	font-size:36px;
+}
+.h4, h4 {
+	font-size:30px;
+}
+.h5, h5 {
+	font-size:26px;
+}
+.h6, h6 {
+	font-size:20px;
+}
 
 
 

@@ -1,27 +1,15 @@
-/*
-File Name default.css
-Package ParentTheme
-License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/* File Name default.css 
 #################################################################################################### */
-/*
-File Name mixins.css
-Package ParentTheme
-License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/* File Name mixins.css 
 #################################################################################################### */
-/*
-File Name mixins-theme.css
-Package ParentTheme
-License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/* File Name mixins-theme.css
 #################################################################################################### */
 /* Block */
 /*Gray*/
 /*Red*/
 /* custom mixins
 #################################################################################################### */
-/* 
-File Name: reset.css
-Package: ParentTheme
-License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/*  File Name: reset.scss
 #################################################################################################### */
 html { width: 100% !important; height: 100%; -webkit-tap-highlight-color: transparent; }
 
@@ -431,7 +419,7 @@ body { color: #000; }
 
 .featured-image { display: block; min-height: 100px; background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 
-.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 { display: block; font-family: serif; line-height: 1.1em; font-weight: 400; }
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, #section-comments .list-comments .comment-author, h5, .h6, h6 { display: block; font-family: serif; line-height: 1.1em; font-weight: 400; }
 
 .h1, h1 { font-size: 46px; }
 
@@ -441,7 +429,7 @@ body { color: #000; }
 
 .h4, h4 { font-size: 30px; }
 
-.h5, h5 { font-size: 26px; }
+.h5, #section-comments .list-comments .comment-author, h5 { font-size: 26px; }
 
 .h6, h6 { font-size: 20px; }
 
@@ -478,42 +466,18 @@ select::-ms-expand { display: none;
 #section-loop-default .entry { clear: both; }
 #section-loop-default .excerpt { clear: none; padding: 0; }
 
-/* 
-File Name comments.css
-Version 1.0
-Updated 03.14.14
-Package ParentTheme
-License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+/* File Name comments.css
 #################################################################################################### */
-#comments { margin-top: 45px; /*end .commentlist*/ }
-#comments .comments-title { margin: 0 0 7px; }
-#comments .navigation { display: block; clear: both; text-align: left; padding: 3px 7px; }
-#comments .prev-page { padding-left: 7px; }
-#comments .next-page { padding-right: 7px; }
-#comments .commentlist { list-style: none; margin: 0 0 1em; padding: 0; text-indent: 0; }
-#comments .commentlist li { padding-bottom: 22px; margin-bottom: 10px; }
-#comments .commentlist li .vcard { font-style: normal; padding: 0 0 3px; font-weight: 200; font-size: 16px; letter-spacing: 1px; }
-#comments .commentlist li .avatar { float: right; margin: 0 0 1em 1em; }
-#comments .commentlist li .comment-meta { padding-bottom: 2px; }
-#comments .commentlist li .comment-meta a { font-size: 12px; }
-#comments .commentlist li ul { list-style: square; margin: 0 0 1em 2em; }
-#comments .commentlist li .reply { text-align: right; }
-#comments .commentlist li .reply a { text-decoration: underline; font-style: italic; padding-left: 10px; }
-#comments .commentlist li ul.children { list-style: none; margin: 10px 0 0 0; text-indent: 0; }
-#comments .commentlist li ul.children li { padding-bottom: 0; }
+#section-comments .h4 { padding-bottom: 15px; }
+#section-comments .list-comments .comment { padding-top: 30px; }
+#section-comments .list-comments .comment:first-child { padding-top: 0; }
+#section-comments .list-comments .comment-author { padding-bottom: 5px; }
+#section-comments .list-comments .comment-date { padding-bottom: 10px; }
+#section-comments .list-comments p { padding-bottom: 15px; }
 
-/*end #comments*/
-#respond { /*end form*/ }
-#respond #reply-title { margin: 0 0 7px; }
-#respond form .form-block { padding-bottom: 7px; }
-#respond form label { display: inline-block; width: 20%; }
-#respond form .required { width: 0%; display: none; }
-#respond form intput[type="text"] { display: inline-block; margin: 7px 0; width: 40% !important; }
-#respond form .comment-notes, #respond form .comment-form-author, #respond form .comment-form-email, #respond form .comment-form-url, #respond form .comment-form-comment { padding-bottom: 7px; }
-#respond form .comment-form-url label { display: inline-block; width: 21%; }
-#respond form .button-submit { margin-top: 7px; }
+#respond { margin-top: 30px; }
+#respond form p { padding-bottom: 10px; }
 
-/*end #respond*/
 /* 
 File Name: responsive.css
 Version: 1.2
