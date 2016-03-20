@@ -18,16 +18,6 @@ class ACFThemeOptionsWP {
 
 
 
-	/**
-	 * errors
-	 *
-	 * @access public
-	 * @var array
-	 **/
-	var $errors = array();
-
-
-
 
 
 
@@ -39,10 +29,10 @@ class ACFThemeOptionsWP {
 	 **/
 	function __construct() {
 
-		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
-		add_action( 'init', array( &$this, 'init' ) );
+		add_action( 'after_setup_theme', array( $this, 'after_setup_theme' ) );
+		add_action( 'init', array( $this, 'init' ) );
 		if ( is_admin() ) {
-			add_action( 'admin_menu', array( &$this, 'remove_mene_page' ), 99 );
+			add_action( 'admin_menu', array( $this, 'remove_mene_page' ), 99 );
 		}
 
 	} // end function __construct
@@ -192,37 +182,6 @@ class ACFThemeOptionsWP {
 		}
 
     } // end function remove_mene_page
-
-
-
-
-
-
-	####################################################################################################
-	/**
-	 * Conditionals
-	 **/
-	####################################################################################################
-
-
-
-
-
-
-	/**
-	 * haveErrors
-	 **/
-	function haveErrors() {
-
-		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
-			$this->set( 'haveErrors', 1 );
-		} else {
-			$this->set( 'haveErrors', 0 );
-		}
-
-		return $this->haveErrors;
-
-	} // end function haveErrors
 
 
 

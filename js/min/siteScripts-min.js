@@ -270,7 +270,7 @@ var childTheme = {
 	 **/
 	,functionName : function() {
 
-
+		// do supper cool stuff here :)
 
 	} // end functionName : function
 

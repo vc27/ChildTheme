@@ -10,6 +10,18 @@ Issues, Notes, Current task
 ChangeLog
 ====================
 
+### 12.05.15 - randy-c-5.7.0
+- add icomoon
+- clean functions.php a little more
+- clean css a bit more
+- clean ngApp a little
+- update admin customizations a little
+- clean theme options a little
+
+### 10.09.15 - randy-c-5.6.1
+- final commit to master
+- update theme options to remove featured image on page
+
 ### 10.09.15 - randy-c-5.6.0
 - split mixin file in two parts
 - add a few mixins from various projects
