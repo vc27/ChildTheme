@@ -27,7 +27,7 @@ var childTheme = {
 	 **/
 	,functionName : function() {
 
-		// do supper cool stuff here :)
+
 
 	} // end functionName : function
 
@@ -43,4 +43,4 @@ var childTheme = {
 /**
  * jQuery
  **/
-// jQuery(document).ready(function() { childTheme.init(); });
+jQuery(document).ready(function() { childTheme.init(); });
