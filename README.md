@@ -12,6 +12,9 @@ ChildTheme is intended to be a barebones starting point for WordPress use. Child
 ChangeLog
 ====================
 
+### 03.20.16 - v-6.0.0 randy-c-6.2
+- fine tune grunt setup
+
 ### 03.20.16 - v-6.0.0 randy-c-6.1
 - update compile to grunt
 - update gitignore
