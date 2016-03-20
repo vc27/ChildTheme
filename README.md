@@ -5,19 +5,20 @@ ChildTheme is intended to be a barebones starting point for WordPress use. Child
 
 ### Current Task
 
-- update compile to grunt
-- update gitignore
-- update css & html foundations
-- update template with clean start
-- confirm function.php is clean
-- confirm js is clean
-
 ### Issues
 
 ### Notes
 
 ChangeLog
 ====================
+
+### 03.20.16 - v-6.0.0 randy-c-6.1
+- update compile to grunt
+- update gitignore
+- update css & html foundations
+- update template with clean start
+- confirm function.php is clean
+- confirm js is clean
 
 ### 03.20.16 - v-6.0.0 randy-c-6.0
 - remove randy commit log and merge it into the readme file.
