@@ -24,7 +24,6 @@ require_once( "addons/initiate-addons.php" );
  * @since 4.0.0
  **/
 $ChildTheme = new ChildTheme();
-$ChildTheme->set( 'ThemeCompatibility', 7 );
 $ChildTheme->initChildTheme();
 class ChildTheme {
 
@@ -86,16 +85,16 @@ class ChildTheme {
 
 
 	/**
-     * set
+	 * set
 	 * @since 4.0.0
-     **/
-    function set( $key, $val = false ) {
+	 **/
+	function set( $key, $val = false ) {
 
-        if ( isset( $key ) AND ! empty( $key ) ) {
-            $this->$key = $val;
-        }
+		if ( isset( $key ) AND ! empty( $key ) ) {
+			$this->$key = $val;
+		}
 
-    } // end function set
+	} // end function set
 
 
 
@@ -134,14 +133,16 @@ class ChildTheme {
 		// add_filter( 'tag_body_attr', array( $this, 'tag_body_attr' ) );
 
 		$this->set( 'ParentTheme', new ParentTheme() );
+
 		$this->ParentTheme->register_sidebars( array(
 			'Primary Sidebar' => array(
 				'desc' => 'This is the primary widgetized area.',
 			),
 		) );
+
 		register_nav_menus( array(
-			'primary-navigation' => 'Primary Navigation',
-			'footer-navigation' => 'Footer Navigation'
+			'primary-menu' => __( 'Primary Menu Navigation', 'parenttheme' ),
+			'footer-menu' => __( 'Footer Menu Navigation', 'parenttheme' )
 		) );
 
 		add_theme_support( 'acf-theme-options' );
@@ -177,15 +178,16 @@ class ChildTheme {
 		global $is_IE;
 
 		wp_register_style( 'icomoon', "$this->stylesheet_directory_uri/css/icomoon/style.css", array(), null );
-		wp_register_style( 'childtheme-default', "$this->stylesheet_directory_uri/css/default.css", array(), null );
+		wp_register_style( 'childtheme-style', "$this->stylesheet_directory_uri/style.css", array(), null );
 
-		// wp_register_script( 'angular', "//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js", array('jquery'), null );
-		wp_register_script( 'siteScripts', "$this->stylesheet_directory_uri/js/min/siteScripts-min.js", array('jquery'), null );
+		wp_register_script( 'childtheme-scripts', "$this->stylesheet_directory_uri/js/siteScripts.js", array('jquery'), null );
 
+		/*
 		if ( $is_IE OR $this->is_IE ) {
 			wp_register_style( 'IE8', "$this->stylesheet_directory_uri/css/IE8.css", array(), null );
 			wp_register_style( 'IE9', "$this->stylesheet_directory_uri/css/IE9.css", array(), null );
 		}
+		*/
 
 	} // end function register_style_and_scripts
 
@@ -218,7 +220,7 @@ class ChildTheme {
 		add_action( 'after-loop', 'previous_next___post_link' );
 
 		// Add Page Title
-		add_action( 'section-main-top', 'archive__title' );
+		add_action( 'before-loop', 'archive__title' );
 
 
 	} // end function layout_options
@@ -237,9 +239,10 @@ class ChildTheme {
 
 		// Styles
 		wp_enqueue_style( 'icomoon' );
-		wp_enqueue_style( 'childtheme-default' );
+		wp_enqueue_style( 'childtheme-style' );
 
 		// IE
+		/*
 		if ( $is_IE OR $this->is_IE ) {
 			global $wp_styles;
 			wp_enqueue_style( 'IE8' );
@@ -247,10 +250,10 @@ class ChildTheme {
 			$wp_styles->add_data( 'IE8', 'conditional', 'lt IE 9' );
 			$wp_styles->add_data( 'IE9', 'conditional', 'lt IE 10' );
 		}
+		*/
 
 		// JS Scripts
-		// wp_enqueue_script( 'angular' );
-		wp_enqueue_script( 'siteScripts' );
+		wp_enqueue_script( 'childtheme-scripts' );
 
 	} // function wp_enqueue_scripts
 
