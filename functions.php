@@ -15,10 +15,6 @@
 require_once( "addons/initiate-addons.php" );
 
 
-
-
-
-
 /**
  * ChildTheme
  * @since 4.0.0
@@ -27,25 +23,17 @@ $ChildTheme = new ChildTheme();
 $ChildTheme->initChildTheme();
 class ChildTheme {
 
-
-
 	/**
 	 * is_IE
 	 * @since 4.0.0
 	 **/
 	var $is_IE = false;
 
-
-
 	/**
 	 * ajax_action
 	 * @since 4.0.0
 	 **/
 	var $ajax_action = 'theme-ajax';
-
-
-
-
 
 
 	/**
@@ -64,10 +52,6 @@ class ChildTheme {
 	} // end function __construct
 
 
-
-
-
-
 	/**
 	 * initChildTheme
 	 * @since 4.0.0
@@ -78,10 +62,6 @@ class ChildTheme {
 		add_action( 'init', array( $this, 'init' ) );
 
 	} // end function initChildTheme
-
-
-
-
 
 
 	/**
@@ -95,10 +75,6 @@ class ChildTheme {
 		}
 
 	} // end function set
-
-
-
-
 
 
 	/**
@@ -117,10 +93,6 @@ class ChildTheme {
 		add_image_size( 'large-ex', 2000, 4000, false );
 
 	} // end function after_setup_theme
-
-
-
-
 
 
 	/**
@@ -155,19 +127,11 @@ class ChildTheme {
 	} // end function init
 
 
-
-
-
-
 	####################################################################################################
 	/**
 	 * Register / De-Register Scripts & CSS
 	 **/
 	####################################################################################################
-
-
-
-
 
 
 	/**
@@ -192,19 +156,11 @@ class ChildTheme {
 	} // end function register_style_and_scripts
 
 
-
-
-
-
 	####################################################################################################
 	/**
 	 * Front End - Enqueue, Print & other menial labor
 	 **/
 	####################################################################################################
-
-
-
-
 
 
 	/**
@@ -224,10 +180,6 @@ class ChildTheme {
 
 
 	} // end function layout_options
-
-
-
-
 
 
 	/**
@@ -258,10 +210,6 @@ class ChildTheme {
 	} // function wp_enqueue_scripts
 
 
-
-
-
-
 	/**
 	 * filter_localize_script
 	 * @since 4.0.0
@@ -276,10 +224,6 @@ class ChildTheme {
 	} // function filter_localize_script
 
 
-
-
-
-
 	/**
 	 * tag_html_attr
 	 **/
@@ -292,10 +236,6 @@ class ChildTheme {
 	} // end function tag_html_attr
 
 
-
-
-
-
 	/**
 	 * tag_body_attr
 	 **/
@@ -306,8 +246,6 @@ class ChildTheme {
 		return $attr;
 
 	} // end function tag_body_attr
-
-
 
 
 } // end class ChildTheme

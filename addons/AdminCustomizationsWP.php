@@ -10,37 +10,15 @@
 
 
 
-
-
 /**
  * AdminCustomizationsWP
- *
- * @version 1.0
- * @updated 00.00.00
  **/
 $AdminCustomizationsWP = new AdminCustomizationsWP();
 class AdminCustomizationsWP {
 
 
-
-	/**
-	 * errors
-	 *
-	 * @access public
-	 * @var array
-	 **/
-	var $errors = array();
-
-
-
-
-
-
 	/**
 	 * __construct
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function __construct() {
 
@@ -55,15 +33,8 @@ class AdminCustomizationsWP {
 	} // end function __construct
 
 
-
-
-
-
 	/**
 	 * login_init
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function login_init() {
 
@@ -90,15 +61,8 @@ class AdminCustomizationsWP {
 	} // end function login_init
 
 
-
-
-
-
 	/**
 	 * admin_init
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function admin_init() {
 
@@ -108,15 +72,8 @@ class AdminCustomizationsWP {
 	} // end function admin_init
 
 
-
-
-
-
 	/**
 	 * set
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function set( $key, $val = false ) {
 
@@ -127,27 +84,6 @@ class AdminCustomizationsWP {
 	} // end function set
 
 
-
-
-
-
-	/**
-	 * error
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function error( $error_key ) {
-
-		$this->errors[] = $error_key;
-
-	} // end function error
-
-
-
-
-
-
 	####################################################################################################
 	/**
 	 * Functionality
@@ -155,15 +91,8 @@ class AdminCustomizationsWP {
 	####################################################################################################
 
 
-
-
-
-
 	/**
 	 * login_enqueue_scripts
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function login_enqueue_scripts() {
 
@@ -173,24 +102,12 @@ class AdminCustomizationsWP {
 		) {
 			wp_enqueue_style( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/css/admin-login.css", array(), null );
 		}
-		/*
-		if ( $this->show_adminLogin AND file_exists( get_stylesheet_directory() . "/js/min/adminLogin-min.js" ) ) {
-			wp_enqueue_script( 'childtheme-admin-login', get_stylesheet_directory_uri() . "/min/adminLogin-min", array('jquery'), null );
-		}
-		*/
 
 	} // end function login_enqueue_scripts
 
 
-
-
-
-
 	/**
 	 * admin_footer_text
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function admin_footer_text( $text ) {
 
@@ -201,15 +118,8 @@ class AdminCustomizationsWP {
 	} // end function admin_footer_text
 
 
-
-
-
-
 	/**
 	 * remove_submenus
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function remove_submenus() {
 		// global $submenu; print_r($submenu);
@@ -230,37 +140,6 @@ class AdminCustomizationsWP {
 		// global $submenu; print_r($submenu);
 
 	} // end function remove_submenus
-
-
-
-
-
-
-	####################################################################################################
-	/**
-	 * Conditionals
-	 **/
-	####################################################################################################
-
-
-
-
-
-
-	/**
-	 * haveErrors
-	 **/
-	function haveErrors() {
-
-		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
-			$this->set( 'haveErrors', 1 );
-		} else {
-			$this->set( 'haveErrors', 0 );
-		}
-
-		return $this->haveErrors;
-
-	} // end function haveErrors
 
 
 

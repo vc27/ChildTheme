@@ -18,43 +18,6 @@
 class ACFWP {
 
 
-
-	/**
-	 * Option name
-	 *
-	 * @access public
-	 * @var string
-	 * @since 0.0.0
-	 **/
-	var $option_name = false;
-
-
-
-	/**
-	 * errors
-	 *
-	 * @access public
-	 * @var array
-	 * @since 0.0.0
-	 **/
-	var $errors = array();
-
-
-
-	/**
-	 * have_errors
-	 *
-	 * @access public
-	 * @var bool
-	 * @since 0.0.0
-	 **/
-	var $have_errors = 0;
-
-
-
-
-
-
 	/**
 	 * __construct
 	 * @since 0.0.0
@@ -62,10 +25,6 @@ class ACFWP {
 	function __construct() {
 
 	} // end function __construct
-
-
-
-
 
 
 	/**
@@ -79,25 +38,6 @@ class ACFWP {
 		}
 
 	} // end function set
-
-
-
-
-
-
-	/**
-	 * error
-	 * @since 0.0.0
-	 **/
-	function error( $error_key ) {
-
-		$this->errors[] = $error_key;
-
-	} // end function error
-
-
-
-
 
 
 	/**
@@ -120,19 +60,11 @@ class ACFWP {
 	} // end function get
 
 
-
-
-
-
 	####################################################################################################
 	/**
 	 * Functionality
 	 **/
 	####################################################################################################
-
-
-
-
 
 
 	/**
@@ -145,10 +77,6 @@ class ACFWP {
 		return self::return_image( $image, $size );
 
 	} // end function get_image
-
-
-
-
 
 
 	/**
@@ -173,10 +101,6 @@ class ACFWP {
 	} // end function return_image
 
 
-
-
-
-
 	/**
 	 * get_sub_field
 	 * @since 0.0.0
@@ -197,38 +121,6 @@ class ACFWP {
 		}
 
 	} // end static function get_sub_field
-
-
-
-
-
-
-	####################################################################################################
-	/**
-	 * Conditionals
-	 **/
-	####################################################################################################
-
-
-
-
-
-
-	/**
-	 * have_errors
-	 * @since 0.0.0
-	 **/
-	function have_errors() {
-
-		if ( isset( $this->errors ) AND ! empty( $this->errors ) AND is_array( $this->errors ) ) {
-			$this->set( 'have_errors', 1 );
-		} else {
-			$this->set( 'have_errors', 0 );
-		}
-
-		return $this->have_errors;
-
-	} // end function have_errors
 
 
 
