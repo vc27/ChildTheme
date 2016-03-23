@@ -142,7 +142,7 @@ class ChildTheme {
 		global $is_IE;
 
 		wp_register_style( 'icomoon', "$this->stylesheet_directory_uri/css/icomoon/style.css", array(), null );
-		wp_register_style( 'childtheme-style', "$this->stylesheet_directory_uri/style.css", array(), null );
+		wp_register_style( 'childtheme-style', "$this->stylesheet_directory_uri/css/style.css", array(), null );
 
 		wp_register_script( 'childtheme-scripts', "$this->stylesheet_directory_uri/js/siteScripts.js", array('jquery'), null );
 

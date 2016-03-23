@@ -12,6 +12,9 @@ ChildTheme is intended to be a barebones starting point for WordPress use. Child
 ChangeLog
 ====================
 
+### 03.23.16 - v-6.0.2 randy-c-8.0
+- move style.css to /css and leave style.css in root for theme info
+
 ### 03.21.16 - v-6.0.1 randy-c-7.0
 - update scss mixins
 - update addons classes with minor cleaning
