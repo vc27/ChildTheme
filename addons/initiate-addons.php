@@ -9,6 +9,9 @@
 
 if ( ! defined('THEME_ADDONS_INIT') ) {
 
+	require_once( "Rollbar_WP.php" );
+	require_once( "Monolog_WP.php" );
+
 	// Init ParentTheme lib
 	require_once( get_template_directory() . "/includes/initiate-lib.php" );
 

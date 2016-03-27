@@ -12,6 +12,12 @@ ChildTheme is intended to be a barebones starting point for WordPress use. Child
 ChangeLog
 ====================
 
+### 03.27.16 - v-6.1.0 randy-c-9.0
+- add composer.json
+- include vendor autoload for Monolog and RollBar
+- create base init classes for Monolog and RollBar
+- minor cleaning of general class files
+
 ### 03.23.16 - v-6.0.2 randy-c-8.0
 - move style.css to /css and leave style.css in root for theme info
 

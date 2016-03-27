@@ -6,7 +6,10 @@
  **/
 ####################################################################################################
 
-
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 
 
@@ -15,10 +18,6 @@
  **/
 $ACFThemeOptionsWP = new ACFThemeOptionsWP();
 class ACFThemeOptionsWP {
-
-
-
-
 
 
 	/**
@@ -38,10 +37,6 @@ class ACFThemeOptionsWP {
 	} // end function __construct
 
 
-
-
-
-
 	/**
 	 * after_setup_theme
 	 **/
@@ -50,10 +45,6 @@ class ACFThemeOptionsWP {
 		add_theme_support('acf-theme-options');
 
 	} // end function after_setup_theme
-
-
-
-
 
 
 	/**
@@ -66,15 +57,8 @@ class ACFThemeOptionsWP {
 	} // end function init
 
 
-
-
-
-
 	/**
 	 * set
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function set( $key, $val = false ) {
 
@@ -85,19 +69,11 @@ class ACFThemeOptionsWP {
 	} // end function set
 
 
-
-
-
-
 	####################################################################################################
 	/**
 	 * Functionality
 	 **/
 	####################################################################################################
-
-
-
-
 
 
 	/**
@@ -120,14 +96,10 @@ class ACFThemeOptionsWP {
 	} // end function add_options_pages
 
 
-
-
-
-
 	/**
 	 * remove_mene_page
 	 **/
-    function remove_mene_page() {
+	 function remove_mene_page() {
 
 		if (
 			! is__user('randy')
@@ -136,8 +108,6 @@ class ACFThemeOptionsWP {
 			remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		}
 
-    } // end function remove_mene_page
-
-
+	} // end function remove_mene_page
 
 } // end class ACFThemeOptionsWP

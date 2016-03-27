@@ -7,13 +7,17 @@
 #################################################################################################### */
 
 
+/**
+ * Composer: Vendor Autoload
+ * @since 6.0.2
+ **/
+require_once( "vendor/autoload.php" );
 
 /**
  * Initiate Addons
  * @since 4.0.0
  **/
 require_once( "addons/initiate-addons.php" );
-
 
 /**
  * ChildTheme
