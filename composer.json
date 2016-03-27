@@ -1,0 +1,6 @@
+{
+	"require": {
+		"rollbar/rollbar": "^0.15.0",
+		"monolog/monolog": "^1.17"
+	}
+}

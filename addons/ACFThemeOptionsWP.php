@@ -6,7 +6,10 @@
  **/
 ####################################################################################################
 
-
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 
 
@@ -15,10 +18,6 @@
  **/
 $ACFThemeOptionsWP = new ACFThemeOptionsWP();
 class ACFThemeOptionsWP {
-
-
-
-
 
 
 	/**
@@ -38,10 +37,6 @@ class ACFThemeOptionsWP {
 	} // end function __construct
 
 
-
-
-
-
 	/**
 	 * after_setup_theme
 	 **/
@@ -50,10 +45,6 @@ class ACFThemeOptionsWP {
 		add_theme_support('acf-theme-options');
 
 	} // end function after_setup_theme
-
-
-
-
 
 
 	/**
@@ -66,15 +57,8 @@ class ACFThemeOptionsWP {
 	} // end function init
 
 
-
-
-
-
 	/**
 	 * set
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function set( $key, $val = false ) {
 
@@ -85,48 +69,6 @@ class ACFThemeOptionsWP {
 	} // end function set
 
 
-
-
-
-
-	/**
-	 * error
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function error( $error_key ) {
-
-		$this->errors[] = $error_key;
-
-	} // end function error
-
-
-
-
-
-
-	/**
-	 * get
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function get( $key ) {
-
-		if ( isset( $key ) AND ! empty( $key ) AND isset( $this->$key ) AND ! empty( $this->$key ) ) {
-			return $this->$key;
-		} else {
-			return false;
-		}
-
-	} // end function get
-
-
-
-
-
-
 	####################################################################################################
 	/**
 	 * Functionality
@@ -134,15 +76,8 @@ class ACFThemeOptionsWP {
 	####################################################################################################
 
 
-
-
-
-
 	/**
 	 * add_options_pages
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
 	function add_options_pages() {
 
@@ -161,28 +96,18 @@ class ACFThemeOptionsWP {
 	} // end function add_options_pages
 
 
-
-
-
-
 	/**
 	 * remove_mene_page
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
 	 **/
-    function remove_mene_page() {
+	 function remove_mene_page() {
 
 		if (
 			! is__user('randy')
-			AND ! is__user('metacake')
 		) {
 			remove_menu_page( 'edit.php?post_type=acf' );
 			remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		}
 
-    } // end function remove_mene_page
-
-
+	} // end function remove_mene_page
 
 } // end class ACFThemeOptionsWP

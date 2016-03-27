@@ -7,13 +7,15 @@
  **/
 #################################################################################################### */
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 
 
 $WPSEOEdits = new WPSEOEdits();
 class WPSEOEdits {
-
-
 
 
 	function __construct() {
@@ -25,14 +27,8 @@ class WPSEOEdits {
 
 
 
-
-
-
 	/**
 	 * init
-	 *
-	 * @version 0.1
-	 * @updated 10.07.12
 	 **/
 	function init() {
 
@@ -43,14 +39,8 @@ class WPSEOEdits {
 
 
 
-
-
-
 	/**
 	 * admin_init
-	 *
-	 * @version 0.1
-	 * @updated 04.19.14
 	 **/
 	function admin_init() {
 
@@ -58,10 +48,6 @@ class WPSEOEdits {
 		add_filter( 'wpseo_stopwords', '__return_empty_array' );
 
 	} // end function admin_init
-
-
-
-
 
 
 	/**
