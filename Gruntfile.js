@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			css: {
-				files: 'sass/*.scss',
+				files: '**/*.scss',
 				tasks: ['sass', 'notify:sass']
 			},
 			scripts: {
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 			default_options: {
 				bsFiles: {
 					src: [
-						"style.css",
+						"css/style.css",
 						"*.php",
 						"js/siteScripts.js",
 					]
