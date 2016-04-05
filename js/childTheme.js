@@ -43,4 +43,5 @@ var childTheme = {
 /**
  * jQuery
  **/
+jQuery(document).foundation();
 jQuery(document).ready(function() { childTheme.init(); });

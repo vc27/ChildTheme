@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			dist: {
-				src: ['js/modernizr.custom.45533.js', 'js/respond.src.js', 'js/childTheme.js'],
+				src: ['js/childTheme.js'],
 				dest: 'js/siteScripts.js',
 			},
 		},
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 				files: {
-					'js/siteScripts.js': ['js/modernizr.custom.45533.js', 'js/respond.src.js', 'js/childTheme.js']
+					'js/siteScripts.js': [ 'node_modules/foundation-sites/dist/foundation.js', 'js/childTheme.js']
 				}
 			}
 		},

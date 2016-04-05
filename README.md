@@ -12,6 +12,10 @@ ChildTheme is intended to be a barebones starting point for WordPress use. Child
 ChangeLog
 ====================
 
+### 04.05.16 - v-6.3.0 randy-c-9.2
+- update js with foundation.js
+- remove old js parts
+
 ### 03.27.16 - v-6.2.0 randy-c-9.1
 - add "foundation-sites": "^6.0.0", to package.json
 
